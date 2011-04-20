@@ -127,3 +127,10 @@ instead."
 (defun find-dirs-containing (starting-dir regexp)                                                                
   (delete-duplicates (mapcar 'file-name-directory                                                                
                              (find-lisp-find-files starting-dir regexp))))
+
+;; function to start a shell in a given dir, and rename the shell
+(defun init-shell (starting-dir name)
+  (cd starting-dir)
+  (shell)
+  (rename-buffer name))
+

@@ -10,6 +10,7 @@
 (define-key mbeenen-custom-map (kbd "v") 'revert-buffer)
 (define-key mbeenen-custom-map (kbd "b") 'rename-buffer)
 (define-key mbeenen-custom-map (kbd "q") 'query-replace)
+(define-key mbeenen-custom-map (kbd "m") 'magit-status)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 ;; Always indent on return
