@@ -12,6 +12,10 @@
 (define-key mbeenen-custom-map (kbd "q") 'query-replace)
 (define-key mbeenen-custom-map (kbd "m") 'magit-status)
 
+;; etags-select key bindings
+(global-set-key "\M-?" 'etags-select-find-tag-at-point)
+(global-set-key "\M-." 'etags-select-find-tag)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 ;; Always indent on return
 (global-set-key (kbd "RET") 'newline-and-indent)
