@@ -15,6 +15,7 @@
 (load-file "~/projects/emacs-mbeenen/config/shell-config.el")
 (load-file "~/projects/emacs-mbeenen/config/yasnippet-config.el")
 
+(load-file "~/projects/emacs-mbeenen/config/home/init-shell.el")
 (load-file "~/projects/emacs-mbeenen/config/home/wl-home-config.el")
 
 
