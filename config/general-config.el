@@ -53,7 +53,7 @@
 
 (setq compile-command "brazil-build apollo-pkg")
 (setq grep-command "grep -rni ")
-(setq show-paren-mode t)
+(show-paren-mode t)
 (setq x-select-enable-clipboard t)
 (setq transient-mark-mode t)
 (setq compilation-scroll-output t)
