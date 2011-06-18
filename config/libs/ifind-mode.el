@@ -61,8 +61,8 @@ It's a string with three %s that get replaced by:
     (while (< i 256)
       (define-key map (vector i) 'ifind-printing-char)
       (setq i (1+ i)))
-    (define-key map [up] 'previous-line)
-    (define-key map [down] 'next-line)
+    (define-key map "\C-p" 'previous-line)
+    (define-key map "\C-n" 'next-line)
     (define-key map [return] 'ifind-visit-file)
     (define-key map [backspace] 'ifind-del-char)
     ;; All other keys will abort ifind
