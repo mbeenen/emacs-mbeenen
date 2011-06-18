@@ -83,6 +83,14 @@ It's a string with three %s that get replaced by:
                      " -o -path "))
   "Substring within the find command, specifies which paths to ignore.")
 
+; Custom function which runs ifind-mode in the current directory
+(defun ifind-mode-current-directory()
+  (interactive)
+  (makunbound 'ifind-dir)
+  (defvar ifind-dir default-directory)
+  (ifind-mode)
+  )
+
 (defun ifind-mode ()
   "Start Ifind minor mode."
   (interactive)
