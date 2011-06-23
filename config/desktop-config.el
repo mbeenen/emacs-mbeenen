@@ -4,10 +4,13 @@
 (desktop-save-mode 1) ;; Switch on desktop.el
 (setq desktop-restore-eager 20)
 
-(setq *foo-desktop-file* (concatenate 'string desktop-dir
-                                      "/" desktop-base-file-name))
-(setq *foo-desktop-lock* (concatenate 'string desktop-dir
-                                      "/" desktop-base-lock-name))
+(setq *foo-desktop-file* "~/.emacs.d/desktop/.emacs.desktop")
+(setq *foo-desktop-lock* "~/.emacs.d/desktop/.emacs.desktop.lock")
+;; (setq *foo-desktop-file* (concatenate 'string desktop-dir
+;;                                       "/" desktop-base-file-name))
+;; (setq *foo-desktop-lock* (concatenate 'string desktop-dir
+;;                                       "/" desktop-base-lock-name))
+
 (defun desktop-in-use-p ()
   (and (file-exists-p *foo-desktop-file*) (file-exists-p *foo-desktop-lock*)))
 (defun autosave-desktop ()

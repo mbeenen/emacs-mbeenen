@@ -2,6 +2,8 @@
 (push "~/projects/emacs-mbeenen/config" load-path)
 (push "~/projects/emacs-mbeenen/config/home" load-path)
 
+(load "~/projects/emacs-mbeenen/config/libs/ifind-mode.el")
+
 (load-file "~/projects/emacs-mbeenen/config/home/cedet-config.el")
 (load-file "~/projects/emacs-mbeenen/config/desktop-config.el")
 (load-file "~/projects/emacs-mbeenen/config/dired-config.el")
