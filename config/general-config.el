@@ -23,6 +23,9 @@
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
+;; Always revert files when they change on disk
+(global-auto-revert-mode t)
+
 ;; No tabs-- use spaces when indenting (doesn't affect Makefiles,
 ;; does affect text files and code, doesn't affect existing tabs).
 ;; The use of setq-default means this only affects modes that don't
