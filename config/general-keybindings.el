@@ -13,6 +13,7 @@
 (define-key mbeenen-custom-map (kbd "m") 'magit-status)
 (define-key mbeenen-custom-map (kbd "t") 'run-unit-test)
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
+(define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
