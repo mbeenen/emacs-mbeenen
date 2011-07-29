@@ -55,7 +55,7 @@
 (global-set-key [f11] 'toggle-fullscreen)
 
 (setq compile-command "brazil-build apollo-pkg")
-(setq grep-command "grep -srni ")
+(setq grep-command "grep -Psrni ")
 (show-paren-mode t)
 (setq x-select-enable-clipboard t)
 (setq transient-mark-mode t)

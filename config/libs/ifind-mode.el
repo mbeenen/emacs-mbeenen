@@ -35,6 +35,8 @@
 ;; adding characters. Use the up/down arrows to navigate and press RET to visit
 ;; the file under the cursor.  Any other key will abort the search.
 
+(defvar workspace-dir "/")
+
 (defvar ifind-dir workspace-dir
   "Directory where to search files on.")
 
