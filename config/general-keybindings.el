@@ -16,11 +16,17 @@
 (define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
 (define-key mbeenen-custom-map (kbd "p") 'ido-find-file-in-tag-files)
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
+(define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
 (global-set-key "\M-." 'etags-select-find-tag)
 
+;; Compilation buffer type commands
+(global-set-key "\M-k" 'next-error)
+(global-set-key "\M-l" 'previous-error)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 ;; Always indent on return
 (global-set-key (kbd "RET") 'newline-and-indent)
+
