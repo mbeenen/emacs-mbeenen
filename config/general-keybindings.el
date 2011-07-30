@@ -11,9 +11,11 @@
 (define-key mbeenen-custom-map (kbd "b") 'rename-buffer)
 (define-key mbeenen-custom-map (kbd "q") 'query-replace)
 (define-key mbeenen-custom-map (kbd "m") 'magit-status)
-(define-key mbeenen-custom-map (kbd "t") 'run-unit-test)
+(define-key mbeenen-custom-map (kbd "u") 'run-unit-test)
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
 (define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
+(define-key mbeenen-custom-map (kbd "p") 'ido-find-file-in-tag-files)
+(define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)

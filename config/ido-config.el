@@ -29,6 +29,8 @@
       (ido-completing-read
        "Project file: " (tags-table-files) nil t)))))
 
+
+
 ;; get rid of `find-file-read-only' and replace it with something
 ;; more useful.
 (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
