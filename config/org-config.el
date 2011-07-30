@@ -20,7 +20,7 @@
 ;; Org settings
 (setq org-agenda-files (list "~/emacs/org/organizer.org"))
 (setq org-default-notes-file "~/emacs/org/refile.org")
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)     
 
