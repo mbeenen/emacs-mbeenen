@@ -1,3 +1,6 @@
+(add-to-list 'load-path "~/.emacs.d/etags-select")
+(add-to-list 'load-path "~/.emacs.d/etags-table")
+
 ;; Etags
 (require 'etags)
 

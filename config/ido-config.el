@@ -11,6 +11,7 @@
 (defun ido-find-tag ()
   "Find a tag using ido"
   (interactive)
+  (tags-reset-tags-tables)
   (tags-completion-table)
   (let (tag-names)
     (mapc (lambda (x)
