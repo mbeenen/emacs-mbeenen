@@ -1,6 +1,3 @@
-;; Etags
-(require 'etags)
-
 ;; Midnight Mode (automated buffer cleanup)
 (require 'midnight)
 (midnight-delay-set 'midnight-delay "12:00am")
