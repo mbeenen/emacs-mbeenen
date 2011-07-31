@@ -22,6 +22,8 @@
  
 (defun ido-find-file-in-tag-files ()
   (interactive)
+  (tags-reset-tags-tables)
+  (tags-completion-table)
   (save-excursion
     (let ((enable-recursive-minibuffers t))
       (visit-tags-table-buffer))
