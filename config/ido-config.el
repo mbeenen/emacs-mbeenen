@@ -32,8 +32,6 @@
       (ido-completing-read
        "Project file: " (tags-table-files) nil t)))))
 
-
-
 ;; get rid of `find-file-read-only' and replace it with something
 ;; more useful.
 (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
@@ -58,19 +56,19 @@
 ;; ibuffer sorting
 (setq ibuffer-saved-filter-groups
       (quote (("default"
-               ("dired" (mode . dired-mode))
+               ("org" (mode . org-mode))
                ("shell" (mode . shell-mode))
-               ("perl" (or 
-                        (mode . cperl-mode)
-                        (mode . mmm-mode)))
+               ("mason" (name . "\\.mi?\\|dhandler\\|autohandler\\|html"))
                ("java" (mode . jde-mode))
+               ("dired" (mode . dired-mode))
                ("output" (or
                           (mode . compilation-mode)
                           (mode . grep-mode)
                           (name . "^\\*Shell Command Output\\*$")))
                ("ruby" (mode . ruby-mode))
                ("xml" (mode . nxml-mode))
-               ("org" (mode . org-mode))
+               ("perl" (or 
+                        (mode . cperl-mode)))
                ("elisp" (mode . emacs-lisp-mode))
                ("tags" (mode . tags-table-mode))
                ("erc" (mode . erc-mode))
