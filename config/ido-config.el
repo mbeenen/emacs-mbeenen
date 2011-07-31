@@ -49,18 +49,17 @@
       (message "Opening file...")
     (message "Aborting")))
 
-;;(global-set-key [remap find-tag] 'ido-find-tag)
 (global-set-key (kbd "C-.") 'ido-find-file-in-tag-files)
-(global-set-key (kbd "M-i") 'ido-goto-symbol)
 
 ;; ibuffer sorting
 (setq ibuffer-saved-filter-groups
       (quote (("default"
                ("org" (mode . org-mode))
                ("shell" (mode . shell-mode))
-               ("mason" (name . "\\.mi?\\|dhandler\\|autohandler\\|html"))
+               ("mason" (name . "\\.mi?$\\|^dhandler$\\|^autohandler$\\|^html$"))
                ("java" (mode . jde-mode))
                ("dired" (mode . dired-mode))
+               ("elisp" (mode . emacs-lisp-mode))
                ("output" (or
                           (mode . compilation-mode)
                           (mode . grep-mode)
@@ -69,7 +68,6 @@
                ("xml" (mode . nxml-mode))
                ("perl" (or 
                         (mode . cperl-mode)))
-               ("elisp" (mode . emacs-lisp-mode))
                ("tags" (mode . tags-table-mode))
                ("erc" (mode . erc-mode))
                ("emacs" (or
