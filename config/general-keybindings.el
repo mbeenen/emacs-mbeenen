@@ -9,7 +9,7 @@
 (define-key mbeenen-custom-map (kbd "s") 'shell)
 (define-key mbeenen-custom-map (kbd "v") 'revert-buffer)
 (define-key mbeenen-custom-map (kbd "b") 'rename-buffer)
-(define-key mbeenen-custom-map (kbd "q") 'query-replace)
+(define-key mbeenen-custom-map (kbd "q") 'query-replace-regexp)
 (define-key mbeenen-custom-map (kbd "m") 'magit-status)
 (define-key mbeenen-custom-map (kbd "u") 'run-unit-test)
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
@@ -25,6 +25,11 @@
 ;; Compilation buffer type commands
 (global-set-key "\M-k" 'next-error)
 (global-set-key "\M-l" 'previous-error)
+
+;; Always use regexps
+(global-set-key "\C-s" 'isearch-forward-regexp)
+(global-set-key "\C-r" 'isearch-backward-regexp)
+(global-set-key "\M-%" 'query-replace-regexp)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 ;; Always indent on return
