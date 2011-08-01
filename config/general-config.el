@@ -2,10 +2,7 @@
 (require 'midnight)
 (midnight-delay-set 'midnight-delay "12:00am")
 (setq clean-buffer-list-delay-general 1)
-
-;; Additional commands for moving between windows
-(require 'windmove)
-(windmove-default-keybindings 'meta)
+(setq clean-buffer-list-kill-never-regexps (quote ("^ \\*Minibuf-.*\\*$" "^dired.*$")))
 
 ;; Better naming of buffers with same file name
 (require 'uniquify) 

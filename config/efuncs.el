@@ -134,3 +134,7 @@ instead."
   (shell)
   (rename-buffer name))
 
+;; function to start dired in a given directory, with buffer name name
+(defun init-dired (starting-dir name)
+  (dired starting-dir)
+  (rename-buffer name)) 

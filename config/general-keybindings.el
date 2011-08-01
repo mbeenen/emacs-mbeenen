@@ -35,3 +35,5 @@
 ;; Always indent on return
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; hippie expand
+(global-set-key "\M-/" 'hippie-expand)
