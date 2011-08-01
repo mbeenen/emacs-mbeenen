@@ -1,5 +1,3 @@
-(require 'org-install)
-
 ;; Don't know why emacs complains that org-mode-map is undefined otherwise
 (define-prefix-command 'org-mode-map)
 
@@ -18,7 +16,8 @@
             (org-defkey org-mode-map "\C-c]"    'undefined)))
 
 ;; Org settings
-(setq org-agenda-files (list "~/emacs/org/organizer.org"))
+(setq org-agenda-files (quote ("~/emacs/org/organizer.org"
+                               "~/emacs/org/refile.org")))
 (setq org-default-notes-file "~/emacs/org/refile.org")
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (setq org-log-done t)
@@ -83,6 +82,115 @@
 ;; Agenda Customizations
 ;; Do not dim blocked tasks
 (setq org-agenda-dim-blocked-tasks nil)
+
+(setq org-tags-match-list-sublevels nil)
+(setq org-stuck-projects (quote ("" nil nil "")))
+
+(defun bh/is-subproject-p ()
+  "Any task which is a subtask of another project"
+  (let ((is-subproject)
+        (is-a-task (member (nth 2 (org-heading-components)) org-todo-keywords-1)))
+    (save-excursion
+      (while (and (not is-subproject) (org-up-heading-safe))
+        (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
+          (setq is-subproject t))))
+    (and is-a-task is-subproject)))
+
+(defun bh/is-project-p ()
+  "Any task with a todo keyword subtask and is not a subtask of another project
+This does not support projects with subprojects"
+  (let ((has-subtask)
+        (subtree-end (save-excursion (org-end-of-subtree t)))
+        (is-subproject (bh/is-subproject-p))
+        (is-a-task (member (nth 2 (org-heading-components)) org-todo-keywords-1)))
+    (save-excursion
+      (forward-line 1)
+      (while (and (not has-subtask)
+                  (< (point) subtree-end)
+                  (re-search-forward "^\*+ " subtree-end t))
+        (when (member (org-get-todo-state) org-todo-keywords-1)
+          (setq has-subtask t))))
+    (and is-a-task has-subtask (not is-subproject))))
+
+(defun bh/skip-non-stuck-projects ()
+  "Skip trees that are not stuck projects"
+  (let* ((next-headline (save-excursion (or (outline-next-heading) (point-max))))
+         (subtree-end (save-excursion (org-end-of-subtree t)))
+         (has-next (save-excursion
+                     (forward-line 1)
+                     (and (< (point) subtree-end)
+                          (re-search-forward "^\\*+ \\(NEXT\\|STARTED\\) " subtree-end t)))))
+    (if (and (bh/is-project-p) (not has-next))
+        nil ; a stuck project, has subtasks but no next task
+      next-headline)))
+
+(defun bh/skip-non-project-trees ()
+  "Skip trees that are not projects"
+  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
+    (if (bh/is-project-p)
+        nil
+      subtree-end)))
+
+(defun bh/skip-non-subprojects ()
+  "Skip trees that are not projects"
+  (let ((next-headline (save-excursion (outline-next-heading))))
+    (if (bh/is-subproject-p)
+        nil
+      next-headline)))
+
+(defun bh/skip-project-trees-and-habits ()
+  "Skip trees that are projects"
+  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
+    (cond
+     ((bh/is-project-p)
+      subtree-end)
+     ((org-is-habit-p)
+      subtree-end)
+     (t
+      nil))))
+
+(defun bh/skip-projects ()
+  "Skip trees that are projects"
+  (let ((next-headline (save-excursion (outline-next-heading))))
+    (cond
+     ((bh/is-project-p)
+      next-headline)
+     (t
+      nil))))
+
+(defun bh/skip-projects-and-habits ()
+  "Skip trees that are projects and tasks that are habits"
+  (let ((next-headline (save-excursion (outline-next-heading))))
+    (cond
+     ((bh/is-project-p)
+      next-headline)
+     ((org-is-habit-p)
+      next-headline)
+     (t
+      nil))))
+
+;; archive settings
+(setq org-archive-mark-done nil)
+(setq org-archive-location "%s_archive::* Archived Tasks")
+
+(defun bh/skip-non-archivable-tasks ()
+  "Skip trees that are not available for archiving"
+  (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
+    ;; Consider only tasks with done todo headings as archivable candidates
+    (if (member (org-get-todo-state) org-done-keywords)
+        (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
+               (daynr (string-to-int (format-time-string "%d" (current-time))))
+               (a-month-ago (* 60 60 24 (+ daynr 1)))
+               (last-month (format-time-string "%Y-%m-" (time-subtract (current-time) (seconds-to-time a-month-ago))))
+               (this-month (format-time-string "%Y-%m-" (current-time)))
+               (subtree-is-current (save-excursion
+                                     (forward-line 1)
+                                     (and (< (point) subtree-end)
+                                          (re-search-forward (concat last-month "\\|" this-month) subtree-end t)))))
+          (if subtree-is-current
+              next-headline ; Has a date in this month or last month, skip it
+            nil))  ; available to archive
+      (or next-headline (point-max)))))  
 
 ;; Custom agenda command definitions
 (setq org-agenda-custom-commands
@@ -167,87 +275,4 @@
                ((org-agenda-overriding-header "Tasks to Archive")
                 (org-agenda-skip-function 'bh/skip-non-archivable-tasks))))))
 
-(setq org-tags-match-list-sublevels nil)
 
-(defun bh/is-subproject-p ()
-  "Any task which is a subtask of another project"
-  (let ((is-subproject)
-        (is-a-task (member (nth 2 (org-heading-components)) org-todo-keywords-1)))
-    (save-excursion
-      (while (and (not is-subproject) (org-up-heading-safe))
-        (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
-          (setq is-subproject t))))
-    (and is-a-task is-subproject)))
-
-(defun bh/is-project-p ()
-  "Any task with a todo keyword subtask and is not a subtask of another project
-This does not support projects with subprojects"
-  (let ((has-subtask)
-        (subtree-end (save-excursion (org-end-of-subtree t)))
-        (is-subproject (bh/is-subproject-p))
-        (is-a-task (member (nth 2 (org-heading-components)) org-todo-keywords-1)))
-    (save-excursion
-      (forward-line 1)
-      (while (and (not has-subtask)
-                  (< (point) subtree-end)
-                  (re-search-forward "^\*+ " subtree-end t))
-        (when (member (org-get-todo-state) org-todo-keywords-1)
-          (setq has-subtask t))))
-    (and is-a-task has-subtask (not is-subproject))))
-
-(defun bh/skip-non-stuck-projects ()
-  "Skip trees that are not stuck projects"
-  (let* ((next-headline (save-excursion (or (outline-next-heading) (point-max))))
-         (subtree-end (save-excursion (org-end-of-subtree t)))
-         (has-next (save-excursion
-                     (forward-line 1)
-                     (and (< (point) subtree-end)
-                          (re-search-forward "^\\*+ \\(NEXT\\|STARTED\\) " subtree-end t)))))
-    (if (and (bh/is-project-p) (not has-next))
-        nil ; a stuck project, has subtasks but no next task
-      next-headline)))
-
-(defun bh/skip-non-project-trees ()
-  "Skip trees that are not projects"
-  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
-    (if (bh/is-project-p)
-        nil
-      subtree-end)))
-
-(defun bh/skip-non-subprojects ()
-  "Skip trees that are not projects"
-  (let ((next-headline (save-excursion (outline-next-heading))))
-    (if (bh/is-subproject-p)
-        nil
-      next-headline)))
-
-(defun bh/skip-project-trees-and-habits ()
-  "Skip trees that are projects"
-  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
-    (cond
-     ((bh/is-project-p)
-      subtree-end)
-     ((org-is-habit-p)
-      subtree-end)
-     (t
-      nil))))
-
-(defun bh/skip-projects ()
-  "Skip trees that are projects"
-  (let ((next-headline (save-excursion (outline-next-heading))))
-    (cond
-     ((bh/is-project-p)
-      next-headline)
-     (t
-      nil))))
-
-(defun bh/skip-projects-and-habits ()
-  "Skip trees that are projects and tasks that are habits"
-  (let ((next-headline (save-excursion (outline-next-heading))))
-    (cond
-     ((bh/is-project-p)
-      next-headline)
-     ((org-is-habit-p)
-      next-headline)
-     (t
-      nil))))
