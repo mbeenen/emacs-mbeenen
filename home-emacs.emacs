@@ -6,6 +6,7 @@
 (load-file "~/projects/emacs-mbeenen/config/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/desktop-config.el")
 (load-file "~/projects/emacs-mbeenen/config/dired-config.el")
+(load-file "~/projects/emacs-mbeenen/config/eclim-config.el")
 (load-file "~/projects/emacs-mbeenen/config/efuncs.el")
 (load-file "~/projects/emacs-mbeenen/config/erc-config.el")
 (load-file "~/projects/emacs-mbeenen/config/general-config.el")
