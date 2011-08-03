@@ -1,3 +1,7 @@
+(add-to-list 'load-path "~/src-installs/org/lisp")
+(add-to-list 'load-path "~/src-installs/org/contrib/lisp")
+(require 'org-install)
+
 ;; Don't know why emacs complains that org-mode-map is undefined otherwise
 (define-prefix-command 'org-mode-map)
 
@@ -25,10 +29,13 @@
 
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/git/org/organizer.org")
+      (quote (("t" "todo" entry (file "~/emacs/org/refile.org")
+               "* TODO %?\n  %i" )
+              ("T" "todo with file" entry (file "~/emacs/org/refile.org")
                "* TODO %?\n%a\n  %i" )
-              ("n" "note" entry (file "~/git/org/organizer.org")
+              ("n" "note" entry (file "~/emacs/org/refile.org")
                "* %? :NOTE:\n%U\n%a\n  %i" ))))
+
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d!/!)")
