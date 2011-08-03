@@ -56,8 +56,9 @@
       (quote (("default"
                ("org" (mode . org-mode))
                ("shell" (mode . shell-mode))
-               ("mason" (name . "\\.mi?$\\|^dhandler$\\|^autohandler$\\|^html$"))
+               ("mason" (name . "\\.mi?\\|^dhandler\\|^autohandler\\|^html"))
                ("java" (mode . jde-mode))
+               ("git" (name . "^\\*magit:"))
                ("dired" (mode . dired-mode))
                ("elisp" (mode . emacs-lisp-mode))
                ("output" (or
