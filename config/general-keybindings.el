@@ -27,8 +27,8 @@
 (global-set-key "\M-l" 'previous-error)
 
 ;; Always use regexps
-(global-set-key "\C-s" 'isearch-forward-regexp)
-(global-set-key "\C-r" 'isearch-backward-regexp)
+;; (global-set-key "\C-s" 'isearch-forward-regexp)
+;; (global-set-key "\C-r" 'isearch-backward-regexp)
 (global-set-key "\M-%" 'query-replace-regexp)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
