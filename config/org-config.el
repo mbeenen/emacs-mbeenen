@@ -20,20 +20,20 @@
             (org-defkey org-mode-map "\C-c]"    'undefined)))
 
 ;; Org settings
-(setq org-agenda-files (quote ("~/emacs/org/organizer.org"
-                               "~/emacs/org/refile.org")))
-(setq org-default-notes-file "~/emacs/org/refile.org")
+(setq org-agenda-files (list (concat org-dir "/organizer.org")
+                               (concat org-dir "/refile.org")))
+(setq org-default-notes-file (concat org-dir "/refile.org"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)     
 
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/emacs/org/refile.org")
+      (quote (("t" "todo" entry (file (concat org-dir "/refile.org"))
                "* TODO %?\n  %i" )
-              ("T" "todo with file" entry (file "~/emacs/org/refile.org")
+              ("T" "todo with file" entry (file (concat org-dir "/refile.org"))
                "* TODO %?\n%a\n  %i" )
-              ("n" "note" entry (file "~/emacs/org/refile.org")
+              ("n" "note" entry (file (concat org-dir "/refile.org"))
                "* %? :NOTE:\n%U\n%a\n  %i" ))))
 
 

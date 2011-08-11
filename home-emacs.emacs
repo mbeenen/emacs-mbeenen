@@ -2,6 +2,8 @@
 (push "~/projects/emacs-mbeenen/config" load-path)
 (push "~/projects/emacs-mbeenen/config/home" load-path)
 
+(load-file "~/projects/emacs-mbeenen/config/home/env-variables.el")
+
 (load-file "~/projects/emacs-mbeenen/config/home/cedet-config.el")
 (load-file "~/projects/emacs-mbeenen/config/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/desktop-config.el")
