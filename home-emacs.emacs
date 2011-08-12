@@ -10,6 +10,7 @@
 (load-file "~/projects/emacs-mbeenen/config/dired-config.el")
 (load-file "~/projects/emacs-mbeenen/config/eclim-config.el")
 (load-file "~/projects/emacs-mbeenen/config/efuncs.el")
+(load-file "~/projects/emacs-mbeenen/config/elisp-config.el")
 (load-file "~/projects/emacs-mbeenen/config/erc-config.el")
 (load-file "~/projects/emacs-mbeenen/config/general-config.el")
 (load-file "~/projects/emacs-mbeenen/config/general-keybindings.el")
