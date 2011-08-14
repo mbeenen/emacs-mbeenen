@@ -17,4 +17,6 @@
   (add-to-list 'mode-line-buffer-identification 
                '(:propertize (" " default-directory " ") face dired-directory)))
 (add-hook 'shell-mode-hook 'add-mode-line-dirtrack)
+(add-hook 'eshell-mode-hook 'add-mode-line-dirtrack)
+(setq eshell-prompt-function (lambda nil (concat (if (= (user-uid) 0) " # " "$ "))))
 
