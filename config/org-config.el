@@ -36,6 +36,11 @@
               ("n" "note" entry (file (concat org-dir "/refile.org"))
                "* %? :NOTE:\n%U\n%a\n  %i" ))))
 
+;; mobile org
+(setq org-mobile-inbox-for-pull (concat org-dir "/refile.org"))
+(setq org-directory org-dir)
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d!/!)")

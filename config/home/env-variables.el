@@ -1,1 +1,1 @@
-(defvar org-dir "~/Dropbox/org")
+(defvar org-dir "~/emacs/org")
