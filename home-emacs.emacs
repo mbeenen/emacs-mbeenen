@@ -23,7 +23,6 @@
 
 (load-file "~/projects/emacs-mbeenen/config/home/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/home/init-shell.el")
-(load-file "~/projects/emacs-mbeenen/config/home/wl-home-config.el")
 
 
 
