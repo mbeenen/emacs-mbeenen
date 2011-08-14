@@ -1,0 +1,6 @@
+Expects the following extensions to be installed in ~/.emacs.d/:
+
+etags-select
+etags-table
+nxhtml
+yasnippet
