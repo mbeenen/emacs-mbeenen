@@ -34,7 +34,9 @@
               ("T" "todo with file" entry (file (concat org-dir "/refile.org"))
                "* TODO %?\n%a\n  %i" )
               ("n" "note" entry (file (concat org-dir "/refile.org"))
-               "* %? :NOTE:\n%U\n%a\n  %i" ))))
+               "* %? :NOTE:\n%U\n%a\n  %i" )
+              ("s" "someday" entry (file (concat org-dir "/refile.org"))
+               "* SOMEDAY %?\n  %i" ))))
 
 ;; mobile org
 (setq org-mobile-inbox-for-pull (concat org-dir "/refile.org"))
