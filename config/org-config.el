@@ -23,7 +23,7 @@
 (setq org-agenda-files (list (concat org-dir "/organizer.org")
                                (concat org-dir "/refile.org")))
 (setq org-default-notes-file (concat org-dir "/refile.org"))
-(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)     
 
@@ -78,7 +78,6 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (define-key org-mode-map "\C-ct" 'bh/org-todo)
 (define-key org-mode-map "\C-u\C-ct" 'bh/widen)
-(global-set-key (kbd "C-M-r") 'org-capture)
 
 (defun bh/org-todo ()
   (interactive)
@@ -231,14 +230,13 @@ This does not support projects with subprojects"
                             (org-agenda-todo-ignore-deadlines t)
                             (org-agenda-sorting-strategy
                              '(category-keep))))
-                ;; (tags-todo "-CANCELLED/!"
-                ;;            ((org-agenda-overriding-header "Projects")
-                ;;             (org-agenda-skip-function 'bh/skip-non-projects)
-                ;;             (org-tags-match-list-sublevels 'indented)
-                ;;             (org-agenda-todo-ignore-scheduled 'future)
-                ;;             (org-agenda-todo-ignore-deadlines 'future)
-                ;;             (org-agenda-sorting-strategy
-                ;;              '(category-keep))))
+                (tags "PROJECT"
+                           ((org-agenda-overriding-header "Projects")
+                            (org-tags-match-list-sublevels 'indented)
+                            (org-agenda-todo-ignore-scheduled 'future)
+                            (org-agenda-todo-ignore-deadlines 'future)
+                            (org-agenda-sorting-strategy
+                             '(category-keep))))
                 (todo "WAITING|SOMEDAY"
                       ((org-agenda-overriding-header "Waiting and Postponed tasks")
                        (org-agenda-skip-function 'bh/skip-projects)))
