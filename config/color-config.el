@@ -11,4 +11,5 @@
  '(mmm-default-submode-face ((t (:background "#4f4f4f"))))
  '(cperl-array-face ((((class color) (background dark)) (:foreground "#f0dfaf"))))
  '(cperl-hash-face ((((class color) (background dark)) (:foreground "#f0dfaf" :slant italic :weight bold))))
+ '(c-annotation-face ((t (:foreground "#8cd0d3"))) t)
   )

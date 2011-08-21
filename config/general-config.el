@@ -11,7 +11,16 @@
   uniquify-separator ":")
 
 ;; turn on font-lock mode
-(global-font-lock-mode t)
+(global-font-lock-mode t t)
+
+;; Highlight matching parens
+(show-paren-mode t)
+
+(setq next-line-add-newlines nil)
+(setq require-final-newline t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq transient-mark-mode t)
+(setq x-select-enable-clipboard t)
 
 ;; Disable backup/autosave
 (setq backup-inhibited t)
@@ -53,9 +62,5 @@
 
 (setq compile-command "brazil-build apollo-pkg")
 (setq grep-command "grep -srni ")
-(show-paren-mode t)
-(setq x-select-enable-clipboard t)
-(setq transient-mark-mode t)
 (setq compilation-scroll-output t)
-(setq next-line-add-newlines t)
 
