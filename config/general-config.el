@@ -11,7 +11,7 @@
   uniquify-separator ":")
 
 ;; turn on font-lock mode
-(global-font-lock-mode t t)
+(global-font-lock-mode t)
 
 ;; Highlight matching parens
 (show-paren-mode t)
