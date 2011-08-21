@@ -5,7 +5,6 @@
 
 (load-file "~/projects/emacs-mbeenen/config/home/env-variables.el")
 
-(load-file "~/projects/emacs-mbeenen/config/home/cedet-config.el")
 (load-file "~/projects/emacs-mbeenen/config/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/dired-config.el")
 (load-file "~/projects/emacs-mbeenen/config/eclim-config.el")
