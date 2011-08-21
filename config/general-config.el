@@ -36,6 +36,9 @@
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 
+;; Always use subword-mode (causes keys like \M-f \M-b to operate over individual chunks of camel case words)
+(global-subword-mode t)
+
 ;; Fullscreen mode
 (defun toggle-fullscreen (&optional f)
   (interactive)
