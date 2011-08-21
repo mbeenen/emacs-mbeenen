@@ -11,3 +11,5 @@
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
 
+(set-face-attribute c-annotation-face nil
+                    :foreground "#8cd0d3")
