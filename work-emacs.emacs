@@ -12,6 +12,7 @@
 (load-file "~/projects/emacs-mbeenen/config/erc-config.el")
 (load-file "~/projects/emacs-mbeenen/config/general-config.el")
 (load-file "~/projects/emacs-mbeenen/config/general-keybindings.el")
+(load-file "~/projects/emacs-mbeenen/config/git-config.el")
 (load-file "~/projects/emacs-mbeenen/config/ido-config.el")
 (load-file "~/projects/emacs-mbeenen/config/java-config.el")
 (load-file "~/projects/emacs-mbeenen/config/javascript-config.el")
