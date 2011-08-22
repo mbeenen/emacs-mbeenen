@@ -18,6 +18,7 @@
   (set-face-attribute c-annotation-face nil
                     :foreground "#8cd0d3")
 
+  (eclim-mode t)
 )
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
