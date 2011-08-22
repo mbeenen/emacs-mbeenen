@@ -16,7 +16,6 @@
 (load-file "~/projects/emacs-mbeenen/config/ido-config.el")
 (load-file "~/projects/emacs-mbeenen/config/java-config.el")
 (load-file "~/projects/emacs-mbeenen/config/javascript-config.el")
-(load-file "~/projects/emacs-mbeenen/config/jdee-config.el")
 (load-file "~/projects/emacs-mbeenen/config/org-config.el")
 (load-file "~/projects/emacs-mbeenen/config/shell-config.el")
 (load-file "~/projects/emacs-mbeenen/config/tags-config.el")
