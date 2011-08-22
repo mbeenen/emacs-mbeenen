@@ -131,7 +131,7 @@ instead."
 ;; function to start a shell in a given dir, and rename the shell
 (defun init-shell (starting-dir name)
   (cd starting-dir)
-  (eshell)
+  (shell)
   (rename-buffer name))
 
 ;; function to start dired in a given directory, with buffer name name
