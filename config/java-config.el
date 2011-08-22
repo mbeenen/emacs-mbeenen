@@ -1,4 +1,5 @@
 (defun mbeenen-java-mode-setup ()
+  (interactive)
   ;; Minor modes
   (c-toggle-auto-newline t)
   (setq c-hungry-delete-key t)
@@ -14,9 +15,11 @@
   (c-set-offset 'arglist-close 'c-lineup-close-paren)
   (c-set-offset 'arglist-intro '+)
 
+  (setq c-comment-start-regexp "(@|/(/|[*][*]?))")
+  (modify-syntax-entry ?@ "< b" java-mode-syntax-table)
   ;; Font face customization
-  (set-face-attribute c-annotation-face nil
-                    :foreground "#8cd0d3")
+  ;; (set-face-attribute c-annotation-face nil
+  ;;                   :foreground "#8cd0d3")
 
   (eclim-mode t)
 )
