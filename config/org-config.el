@@ -21,7 +21,8 @@
 
 ;; Org settings
 (setq org-agenda-files (list (concat org-dir "/organizer.org")
-                               (concat org-dir "/refile.org")))
+                               (concat org-dir "/refile.org")
+                               (concat org-dir "/someday.org")))
 (setq org-default-notes-file (concat org-dir "/refile.org"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (setq org-log-done t)
@@ -137,47 +138,11 @@ This does not support projects with subprojects"
         nil ; a stuck project, has subtasks but no next task
       next-headline)))
 
-(defun bh/skip-non-project-trees ()
-  "Skip trees that are not projects"
-  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
-    (if (bh/is-project-p)
-        nil
-      subtree-end)))
-
-(defun bh/skip-non-subprojects ()
-  "Skip trees that are not projects"
-  (let ((next-headline (save-excursion (outline-next-heading))))
-    (if (bh/is-subproject-p)
-        nil
-      next-headline)))
-
-(defun bh/skip-project-trees-and-habits ()
-  "Skip trees that are projects"
-  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
-    (cond
-     ((bh/is-project-p)
-      subtree-end)
-     ((org-is-habit-p)
-      subtree-end)
-     (t
-      nil))))
-
 (defun bh/skip-projects ()
   "Skip trees that are projects"
   (let ((next-headline (save-excursion (outline-next-heading))))
     (cond
      ((bh/is-project-p)
-      next-headline)
-     (t
-      nil))))
-
-(defun bh/skip-projects-and-habits ()
-  "Skip trees that are projects and tasks that are habits"
-  (let ((next-headline (save-excursion (outline-next-heading))))
-    (cond
-     ((bh/is-project-p)
-      next-headline)
-     ((org-is-habit-p)
       next-headline)
      (t
       nil))))
@@ -228,18 +193,14 @@ This does not support projects with subprojects"
                             (org-tags-match-list-sublevels 'indented)
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
+                            (org-agenda-files '("~/emacs/org/organizer.org"))
                             (org-agenda-sorting-strategy
                              '(category-keep))))
-                (tags "PROJECT"
-                           ((org-agenda-overriding-header "Projects")
-                            (org-tags-match-list-sublevels 'indented)
-                            (org-agenda-todo-ignore-scheduled 'future)
-                            (org-agenda-todo-ignore-deadlines 'future)
-                            (org-agenda-sorting-strategy
-                             '(category-keep))))
-                (todo "WAITING|SOMEDAY"
+                (todo "WAITING"
                       ((org-agenda-overriding-header "Waiting and Postponed tasks")
                        (org-agenda-skip-function 'bh/skip-projects)))
+                (tags "SOMEDAY"
+                      ((org-agenda-overriding-header "Project Wishlist")))
                 (tags "-REFILE/"
                       ((org-agenda-overriding-header "Tasks to Archive")
                        (org-agenda-skip-function 'bh/skip-non-archivable-tasks))))
