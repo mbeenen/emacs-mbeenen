@@ -12,6 +12,7 @@
 (define-key mbeenen-custom-map (kbd "q") 'query-replace-regexp)
 (define-key mbeenen-custom-map (kbd "m") 'magit-status)
 (define-key mbeenen-custom-map (kbd "u") 'run-unit-test)
+(define-key mbeenen-custom-map (kbd "C-u") 'run-unit-test-with-logging)
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
 (define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
 (define-key mbeenen-custom-map (kbd "p") 'ido-find-file-in-tag-files)
