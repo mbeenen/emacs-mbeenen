@@ -83,7 +83,7 @@
                ("org" (mode . org-mode))
                ("shell" (mode . shell-mode))
                ("mason" (name . "\\.mi?\\|^dhandler\\|^autohandler\\|^html"))
-               ("java" (mode . jde-mode))
+               ("java" (mode . java-mode))
                ("git" (name . "^\\*magit:"))
                ("dired" (mode . dired-mode))
                ("elisp" (mode . emacs-lisp-mode))
