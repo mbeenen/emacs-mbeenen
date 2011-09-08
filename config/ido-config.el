@@ -20,6 +20,18 @@
 	  tags-completion-table)
     (find-tag (ido-completing-read "Tag: " tag-names))))
  
+;; (defun ido-find-file-in-tag-files ()
+;;   (interactive)
+;;   (tags-reset-tags-tables)
+;;   (tags-completion-table)
+;;   (save-excursion
+;;     (let ((enable-recursive-minibuffers t))
+;;       (visit-tags-table-buffer))
+;;     (find-file
+;;      (expand-file-name
+;;       (ido-completing-read
+;;        "Project file: " (tags-table-files) nil t)))))
+
 (defun ido-find-file-in-tag-files ()
   (interactive)
   (tags-reset-tags-tables)
@@ -27,10 +39,19 @@
   (save-excursion
     (let ((enable-recursive-minibuffers t))
       (visit-tags-table-buffer))
-    (find-file
-     (expand-file-name
-      (ido-completing-read
-       "Project file: " (tags-table-files) nil t)))))
+    (setq tbl (make-hash-table :test 'equal))
+    (let (ido-list)
+      (mapc (lambda (path)
+	      ;; format path for display in ido list
+	      (setq key (replace-regexp-in-string "\\(.*?\\)\\([^/]+\\)/\\([^/]+?\\)$" "\\3:\\2" path))
+	      ;; remove trailing | or /
+	      (setq key (replace-regexp-in-string "\\(|\\|/\\)$" "" key))
+	      (puthash key path tbl)
+	      (push key ido-list)
+	      )
+	    (tags-table-files)
+	    )
+      (find-file (gethash (ido-completing-read "project-files: " ido-list) tbl)))))
 
 ;; get rid of `find-file-read-only' and replace it with something
 ;; more useful.
