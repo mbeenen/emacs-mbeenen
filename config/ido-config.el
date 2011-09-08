@@ -43,7 +43,7 @@
     (let (ido-list)
       (mapc (lambda (path)
 	      ;; format path for display in ido list
-	      (setq key (replace-regexp-in-string "\\(.*?\\)\\([^/]+?\\)$" "\\2" path))
+	      (setq key (replace-regexp-in-string "\\(.*?\\)\\([^/]+\\)/\\([^/]+?\\)$" "\\3:\\2" path))
 	      ;; remove trailing | or /
 	      (setq key (replace-regexp-in-string "\\(|\\|/\\)$" "" key))
 	      (puthash key path tbl)
