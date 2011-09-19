@@ -20,6 +20,7 @@
 (load-file "~/projects/emacs-mbeenen/config/org-config.el")
 (load-file "~/projects/emacs-mbeenen/config/shell-config.el")
 (load-file "~/projects/emacs-mbeenen/config/tags-config.el")
+(load-file "~/projects/emacs-mbeenen/config/yasnippet-config.el")
 
 (load-file "~/projects/emacs-mbeenen/config/home/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/home/init-shell.el")
