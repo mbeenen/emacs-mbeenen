@@ -26,7 +26,7 @@
   ;;                   :foreground "#8cd0d3")
 
   (java-mode-indent-annotations-setup)
-  (eclim-mode t)
+  ;; (eclim-mode t)
 )
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
