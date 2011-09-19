@@ -19,13 +19,11 @@
 
   (setq tab-width 4)
 
-  ;; (setq c-comment-start-regexp "(@|/(/|[*][*]?))")
-  ;; (modify-syntax-entry ?@ "< b" java-mode-syntax-table)
   ;; Font face customization
-  ;; (set-face-attribute c-annotation-face nil
-  ;;                   :foreground "#8cd0d3")
+  (set-face-attribute c-annotation-face nil
+                    :foreground "#8cd0d3")
 
-  (java-mode-indent-annotations-setup)
+  ;; (java-mode-indent-annotations-setup)
   ;; (eclim-mode t)
 )
 

@@ -4,6 +4,7 @@
 
 (load-file "~/projects/emacs-mbeenen/config/work/env-variables.el")
 
+(load-file "~/projects/emacs-mbeenen/config/cc-mode-config.el")
 (load-file "~/projects/emacs-mbeenen/config/color-config.el")
 (load-file "~/projects/emacs-mbeenen/config/dired-config.el")
 (load-file "~/projects/emacs-mbeenen/config/eclim-config.el")
