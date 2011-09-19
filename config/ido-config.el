@@ -112,31 +112,37 @@ name for the two files, moving up the directory tree step by step."
 
 (global-set-key (kbd "C-.") 'ido-find-file-in-tag-files)
 
-;; (defvar ido-enable-replace-completing-read nil
-;;   "If t, use ido-completing-read instead of completing-read if possible.
+(defvar ido-enable-replace-completing-read t
+  "If t, use ido-completing-read instead of completing-read if possible.
     
-;;     Set it to nil using let in around-advice for functions where the
-;;     original completing-read is required.  For example, if a function
-;;     foo absolutely must use the original completing-read, define some
-;;     advice like this:
+    Set it to nil using let in around-advice for functions where the
+    original completing-read is required.  For example, if a function
+    foo absolutely must use the original completing-read, define some
+    advice like this:
     
-;;     (defadvice foo (around original-completing-read-only activate)
-;;       (let (ido-enable-replace-completing-read) ad-do-it))")
+    (defadvice foo (around original-completing-read-only activate)
+      (let (ido-enable-replace-completing-read) ad-do-it))")
 
-;; ;; Replace completing-read wherever possible, unless directed otherwise
-;; (defadvice completing-read
-;;   (around use-ido-when-possible activate)
-;;   (if (or (not ido-enable-replace-completing-read) ; Manual override disable ido
-;;           (and (boundp 'ido-cur-list)
-;;                ido-cur-list)) ; Avoid infinite loop from ido calling this
-;;       ad-do-it
-;;     (let ((allcomp (all-completions "" collection predicate)))
-;;       (if allcomp
-;;           (setq ad-return-value
-;;                 (ido-completing-read prompt
-;;                                      allcomp
-;;                                      nil require-match initial-input hist def))
-;;         ad-do-it))))
+;; Replace completing-read wherever possible, unless directed otherwise
+(defadvice completing-read
+  (around use-ido-when-possible activate)
+  (if (or (not ido-enable-replace-completing-read) ; Manual override disable ido
+          (and (boundp 'ido-cur-list)
+               ido-cur-list)) ; Avoid infinite loop from ido calling this
+      ad-do-it
+    (let ((allcomp (all-completions "" collection predicate)))
+      (if allcomp
+          (setq ad-return-value
+                (ido-completing-read prompt
+                                     allcomp
+                                     nil require-match initial-input hist def))
+        ad-do-it))))
+
+;; The completing-read advice seems to have issues with tramp,
+;; it will only offer 'dummy' as the prompt on remote machines.
+;; Simply overriding that advice for ido-find-file seems to resolve this issue.
+(defadvice ido-find-file (around original-completing-read-only activate)
+      (let (ido-enable-replace-completing-read) ad-do-it))
 
 ;; ibuffer sorting
 (setq ibuffer-saved-filter-groups
