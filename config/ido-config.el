@@ -161,7 +161,8 @@ name for the two files, moving up the directory tree step by step."
                ("ruby" (mode . ruby-mode))
                ("xml" (mode . nxml-mode))
                ("perl" (or 
-                        (mode . cperl-mode)))
+                        (mode . cperl-mode)
+                        (mode . perl-mode)))
                ("tags" (mode . tags-table-mode))
                ("erc" (mode . erc-mode))
                ("emacs" (or
