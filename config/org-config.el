@@ -28,6 +28,19 @@
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)     
 
+;; Babel settings
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
+
+(org-babel-do-load-languages
+ (quote org-babel-load-languages)
+ (quote ((emacs-lisp . t)
+         (dot . t)
+         (gnuplot . t)
+         (clojure . t)
+         (sh . t)
+         (org . t)
+         (latex . t))))
+
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
       (quote (("t" "todo" entry (file (concat org-dir "/refile.org"))
