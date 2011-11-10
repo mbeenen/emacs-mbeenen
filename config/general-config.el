@@ -63,6 +63,13 @@
 (global-set-key [f11] 'toggle-fullscreen)
 
 (require 'repository-root)
+(setq repository-root-matchers (quote (repository-root-matcher/git)))
+(require 'grep-o-matic)
+(setq grep-o-matic-ask-about-save nil)
+(setq grep-o-matic-search-patterns (quote ("*.cpp" "*.c" "*.h" "*.awk" "*.sh" "*.py" "*.pl" "[Mm]akefile" "*.el" "*handler" "*.java" "*.xml" "*.m" "*.mi" "*.rb" "*.sql" "*.js" "*.css")))
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
+
 (setq compile-command "brazil-build apollo-pkg")
 (setq grep-command "grep -srni ")
 (setq compilation-scroll-output t)

@@ -15,9 +15,15 @@
 (define-key mbeenen-custom-map (kbd "C-u") 'run-unit-test-with-logging)
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
 (define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
-(define-key mbeenen-custom-map (kbd "p") 'ido-find-file-in-tag-files)
+(define-key mbeenen-custom-map (kbd "p") 'grep-o-matic-repository)
+(define-key mbeenen-custom-map (kbd "C-p") 'grep-o-matic-current-directory)
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
+
+;; Another keymap to C-q
+(global-set-key (kbd "C-q") nil)
+(define-prefix-command 'mbeenen-aux-custom-map)
+(global-set-key (kbd "C-q") 'mbeenen-aux-custom-map)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
