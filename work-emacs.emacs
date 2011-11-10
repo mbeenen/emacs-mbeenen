@@ -1,3 +1,4 @@
+(push "~/projects/emacs-mbeenen/site-lisp" load-path)
 (push "~/projects/emacs-mbeenen/config" load-path)
 (push "~/projects/emacs-mbeenen/config/work" load-path)
 (push "~/projects/emacs-mbeenen/config/libs" load-path)

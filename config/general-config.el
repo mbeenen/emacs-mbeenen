@@ -62,33 +62,7 @@
 
 (global-set-key [f11] 'toggle-fullscreen)
 
-;; (defun setup-grep-context-command ()
-;;   "Set local variables if we are in a Brazil build directory.
-
-;; In particular, this function may set `compile-command' to run
-;; brazil-build from the package root."
-;;   (interactive)
-;;   (if (not (file-remote-p default-directory))
-;;       (let ((config-path (amz-locate-file-rootwards default-directory "Config" 'file)))
-;;         ;; If we have both of these, we're probably in a Brazil directory tree.
-;;         (message config-path)
-;;         (if config-path
-;;             (progn
-;;               (setq amz-brazil-package-dir (file-name-directory config-path))
-;;               (message amz-brazil-package-dir)
-;;               (message default-grep-command)
-;;               ;; Brazil-build can use any underlying build system,
-;;               ;; so we can't use -C which is specific to "make".
-;;               (set (make-local-variable 'grep-command)
-;;                    (concat "cd "
-;;                            (file-relative-name amz-brazil-package-dir
-;;                                                default-directory)
-;;                            " ; "
-;;                            default-grep-command
-;;                            " "))
-;;               (message (buffer-local-value 'grep-command (current-buffer))))))))
-
-
+(require 'repository-root)
 (setq compile-command "brazil-build apollo-pkg")
 (setq grep-command "grep -srni ")
 (setq compilation-scroll-output t)
