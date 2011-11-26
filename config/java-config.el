@@ -3,7 +3,7 @@
 (defun mbeenen-java-mode-setup ()
   (interactive)
   ;; Minor modes
-  (c-toggle-auto-newline t)
+  (c-toggle-auto-newline -1)
   (setq c-hungry-delete-key t)
 
   ;; Indentation cleanup
@@ -16,6 +16,7 @@
   ;; Indentation setup
   (c-set-offset 'arglist-close 'c-lineup-close-paren)
   (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-cont-nonempty '++)
 
   (setq tab-width 4)
 
