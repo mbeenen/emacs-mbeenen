@@ -20,18 +20,6 @@
 	  tags-completion-table)
     (find-tag (ido-completing-read "Tag: " tag-names))))
  
-;; (defun ido-find-file-in-tag-files ()
-;;   (interactive)
-;;   (tags-reset-tags-tables)
-;;   (tags-completion-table)
-;;   (save-excursion
-;;     (let ((enable-recursive-minibuffers t))
-;;       (visit-tags-table-buffer))
-;;     (find-file
-;;      (expand-file-name
-;;       (ido-completing-read
-;;        "Project file: " (tags-table-files) nil t)))))
-
 (defun ido-find-file-in-tag-files ()
   "Uses the current tags table to construct a list of files in the project, and use ido-completing-read
 to present the choices. Handles duplicate file names by appending the name of the first different directory
@@ -149,17 +137,18 @@ name for the two files, moving up the directory tree step by step."
       (quote (("default"
                ("org" (mode . org-mode))
                ("shell" (mode . shell-mode))
+               ("dired" (mode . dired-mode))
                ("mason" (name . "\\.mi?\\|^dhandler\\|^autohandler\\|^html"))
                ("java" (mode . java-mode))
+               ("config" (mode . conf-unix-mode))
+               ("xml" (mode . nxml-mode))
                ("git" (name . "^\\*magit:"))
-               ("dired" (mode . dired-mode))
                ("elisp" (mode . emacs-lisp-mode))
                ("output" (or
                           (mode . compilation-mode)
                           (mode . grep-mode)
                           (name . "^\\*Shell Command Output\\*$")))
                ("ruby" (mode . ruby-mode))
-               ("xml" (mode . nxml-mode))
                ("perl" (or 
                         (mode . cperl-mode)
                         (mode . perl-mode)))
@@ -175,6 +164,54 @@ name for the two files, moving up the directory tree step by step."
 (add-hook 'ibuffer-mode-hook
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "default")))
+
+    (defun ido-goto-symbol (&optional symbol-list)
+      "Refresh imenu and jump to a place in the buffer using Ido."
+      (interactive)
+      (unless (featurep 'imenu)
+        (require 'imenu nil t))
+      (cond
+       ((not symbol-list)
+        (let ((ido-mode ido-mode)
+              (ido-enable-flex-matching
+               (if (boundp 'ido-enable-flex-matching)
+                   ido-enable-flex-matching t))
+              name-and-pos symbol-names position)
+          (unless ido-mode
+            (ido-mode 1)
+            (setq ido-enable-flex-matching t))
+          (while (progn
+                   (imenu--cleanup)
+                   (setq imenu--index-alist nil)
+                   (ido-goto-symbol (imenu--make-index-alist))
+                   (setq selected-symbol
+                         (ido-completing-read "Symbol? " symbol-names))
+                   (string= (car imenu--rescan-item) selected-symbol)))
+          (unless (and (boundp 'mark-active) mark-active)
+            (push-mark nil t nil))
+          (setq position (cdr (assoc selected-symbol name-and-pos)))
+          (cond
+           ((overlayp position)
+            (goto-char (overlay-start position)))
+           (t
+            (goto-char position)))))
+       ((listp symbol-list)
+        (dolist (symbol symbol-list)
+          (let (name position)
+            (cond
+             ((and (listp symbol) (imenu--subalist-p symbol))
+              (ido-goto-symbol symbol))
+             ((listp symbol)
+              (setq name (car symbol))
+              (setq position (cdr symbol)))
+             ((stringp symbol)
+              (setq name symbol)
+              (setq position
+                    (get-text-property 1 'org-imenu-marker symbol))))
+            (unless (or (null position) (null name)
+                        (string= (car imenu--rescan-item) name))
+              (add-to-list 'symbol-names name)
+              (add-to-list 'name-and-pos (cons name position))))))))
 
 ;; SMEX
 (add-to-list 'load-path "~/.emacs.d/smex")

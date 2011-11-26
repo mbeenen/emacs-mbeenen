@@ -7,6 +7,7 @@
 (define-key mbeenen-custom-map (kbd "g") 'grep)
 (define-key mbeenen-custom-map (kbd "r") 'recompile)
 (define-key mbeenen-custom-map (kbd "s") 'shell)
+(define-key mbeenen-custom-map (kbd "i") 'ido-goto-symbol)
 (define-key mbeenen-custom-map (kbd "v") 'revert-buffer)
 (define-key mbeenen-custom-map (kbd "b") 'rename-buffer)
 (define-key mbeenen-custom-map (kbd "q") 'query-replace-regexp)
