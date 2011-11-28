@@ -1,1 +1,0 @@
-(define-key nxhtml-mode-map "\C-cc" 'rngalt-complete)
