@@ -8,4 +8,3 @@
  '(cperl-array-face ((((class color) (background dark)) (:foreground "#f0dfaf"))))
  '(cperl-hash-face ((((class color) (background dark)) (:foreground "#f0dfaf" :slant italic :weight bold))))
  )
-

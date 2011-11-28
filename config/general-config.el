@@ -4,17 +4,11 @@
 (setq clean-buffer-list-delay-general 1)
 (setq clean-buffer-list-kill-never-regexps (quote ("^ \\*Minibuf-.*\\*$" "^dired.*$")))
 
-;; Better naming of buffers with same file name
-(require 'uniquify) 
-(setq 
-  uniquify-buffer-name-style 'post-forward
-  uniquify-separator ":")
-
 ;; turn on font-lock mode
 (global-font-lock-mode t)
 
-;; Highlight matching parens
-(show-paren-mode t)
+;; whitespace mode configuration
+(setq whitespace-line-column 120)
 
 (setq next-line-add-newlines nil)
 (setq require-final-newline t)
@@ -40,10 +34,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
-
-;; disable splash screen
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
 
 ;; Always use subword-mode (causes keys like \M-f \M-b to operate over individual chunks of camel case words)
 (global-subword-mode t)
@@ -74,4 +64,3 @@
 (setq compile-command "brazil-build apollo-pkg")
 (setq grep-command "grep -srni ")
 (setq compilation-scroll-output t)
-
