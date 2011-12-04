@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-z") nil)
 (define-prefix-command 'mbeenen-custom-map)
 (global-set-key (kbd "C-z") 'mbeenen-custom-map)
-;; My custom keybindings 
+;; My custom keybindings
 (define-key mbeenen-custom-map (kbd "c") 'compile)
 (define-key mbeenen-custom-map (kbd "g") 'grep)
 (define-key mbeenen-custom-map (kbd "r") 'recompile)
@@ -20,11 +20,16 @@
 (define-key mbeenen-custom-map (kbd "C-p") 'grep-o-matic-current-directory)
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
-
+(define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
 ;; Another keymap to C-q
 (global-set-key (kbd "C-q") nil)
 (define-prefix-command 'mbeenen-aux-custom-map)
 (global-set-key (kbd "C-q") 'mbeenen-aux-custom-map)
+
+;; get off the backspace key
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
@@ -34,14 +39,13 @@
 (global-set-key "\M-k" 'next-error)
 (global-set-key "\M-l" 'previous-error)
 
-;; Always use regexps
-;; (global-set-key "\C-s" 'isearch-forward-regexp)
-;; (global-set-key "\C-r" 'isearch-backward-regexp)
-(global-set-key "\M-%" 'query-replace-regexp)
-
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 ;; Always indent on return
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+;; functions for searching for the word at point in a buffer
+(global-set-key (kbd "M-n") 'smart-symbol-go-forward)
+(global-set-key (kbd "M-p") 'smart-symbol-go-backward)
 
 ;; hippie expand
 (global-set-key "\M-/" 'hippie-expand)

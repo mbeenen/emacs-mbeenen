@@ -88,7 +88,7 @@ name for the two files, moving up the directory tree step by step."
 ;; enable recent files mode.
 (recentf-mode t)
 
-                                        ; 50 files ought to be enough.
+;; 50 files ought to be enough.
 (setq recentf-max-saved-items 50)
 
 (defun ido-recentf-open ()

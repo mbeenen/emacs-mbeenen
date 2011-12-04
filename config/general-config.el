@@ -38,6 +38,7 @@
 ;; Always use subword-mode (causes keys like \M-f \M-b to operate over individual chunks of camel case words)
 (global-subword-mode t)
 
+
 (mouse-avoidance-mode 'exile)
 
 ;; Fullscreen mode
@@ -51,18 +52,3 @@
                                   'fullboth)))))
 
 (global-set-key [f11] 'toggle-fullscreen)
-
-(require 'repository-root)
-(setq repository-root-matchers (quote (repository-root-matcher/git)))
-(require 'grep-o-matic)
-(setq grep-o-matic-ask-about-save nil)
-(setq grep-o-matic-search-patterns (quote ("*.cpp" "*.c" "*.h" "*.awk" "*.sh" "*.py"
-                                           "*.pl" "[Mm]akefile" "*.el" "*handler" "*.java" "*.xml"
-                                           "*.m" "*.mi" "*.rb" "*.sql" "*.js" "*.css" "*.cfg")))
-(require 'grep-a-lot)
-(grep-a-lot-setup-keys)
-(add-hook 'grep-mode-hook 'ansi-color-for-comint-mode-on)
-
-(setq compile-command "brazil-build apollo-pkg")
-(setq grep-command "grep -srni ")
-(setq compilation-scroll-output t)

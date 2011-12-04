@@ -26,7 +26,7 @@
 (setq org-default-notes-file (concat org-dir "/refile.org"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (setq org-log-done t)
-(setq org-agenda-include-all-todo t)     
+(setq org-agenda-include-all-todo t)
 
 ;; Babel settings
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
@@ -172,7 +172,8 @@ This does not support projects with subprojects"
         (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
                (daynr (string-to-int (format-time-string "%d" (current-time))))
                (a-month-ago (* 60 60 24 (+ daynr 1)))
-               (last-month (format-time-string "%Y-%m-" (time-subtract (current-time) (seconds-to-time a-month-ago))))
+               (last-month (format-time-string
+                            "%Y-%m-" (time-subtract (current-time) (seconds-to-time a-month-ago))))
                (this-month (format-time-string "%Y-%m-" (current-time)))
                (subtree-is-current (save-excursion
                                      (forward-line 1)
@@ -181,7 +182,7 @@ This does not support projects with subprojects"
           (if subtree-is-current
               next-headline ; Has a date in this month or last month, skip it
             nil))  ; available to archive
-      (or next-headline (point-max)))))  
+      (or next-headline (point-max)))))
 
 ;; Custom agenda command definitions
 (setq org-agenda-custom-commands
@@ -218,5 +219,3 @@ This does not support projects with subprojects"
                       ((org-agenda-overriding-header "Tasks to Archive")
                        (org-agenda-skip-function 'bh/skip-non-archivable-tasks))))
                nil))))
-
-
