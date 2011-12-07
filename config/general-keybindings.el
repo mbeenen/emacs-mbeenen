@@ -49,3 +49,8 @@
 
 ;; hippie expand
 (global-set-key "\M-/" 'hippie-expand)
+
+;; SMEX
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x C-m") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
