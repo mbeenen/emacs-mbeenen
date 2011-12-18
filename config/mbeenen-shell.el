@@ -19,3 +19,11 @@
 (add-hook 'shell-mode-hook 'add-mode-line-dirtrack)
 (add-hook 'eshell-mode-hook 'add-mode-line-dirtrack)
 (setq eshell-prompt-function (lambda nil (concat (if (= (user-uid) 0) " # " "$ "))))
+
+;; function to start a shell in a given dir, and rename the shell
+(defun init-shell (starting-dir name)
+  (cd starting-dir)
+  (shell)
+  (rename-buffer name))
+
+(provide 'mbeenen-shell)

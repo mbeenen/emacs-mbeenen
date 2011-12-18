@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 
@@ -8,3 +7,5 @@
 ;; Setup my snippets directory
 (setq yas/root-directory "~/projects/emacs-mbeenen/mysnippets")
 (yas/load-directory yas/root-directory)
+
+(provide 'mbeenen-yasnippet)

@@ -26,3 +26,5 @@
     (when (y-or-n-p "Start ERC? ") ;; no: maybe start ERC
       (erc :server "irc.freenode.net" :port 6667
            :nick "mbeenen" :full-name "Michael Beenen"))))
+
+(provide 'mbeenen-erc)

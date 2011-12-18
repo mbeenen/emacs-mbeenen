@@ -217,3 +217,5 @@ name for the two files, moving up the directory tree step by step."
 (add-to-list 'load-path "~/.emacs.d/smex")
 (require 'smex)
 (smex-initialize)
+
+(provide 'mbeenen-ido)

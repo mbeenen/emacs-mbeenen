@@ -1,5 +1,3 @@
-(add-to-list 'load-path "~/src-installs/org/lisp")
-(add-to-list 'load-path "~/src-installs/org/contrib/lisp")
 (require 'org-install)
 
 ;; Don't know why emacs complains that org-mode-map is undefined otherwise
@@ -219,3 +217,5 @@ This does not support projects with subprojects"
                       ((org-agenda-overriding-header "Tasks to Archive")
                        (org-agenda-skip-function 'bh/skip-non-archivable-tasks))))
                nil))))
+
+(provide 'mbeenen-org)

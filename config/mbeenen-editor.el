@@ -1,3 +1,35 @@
+;; turn on font-lock mode
+(global-font-lock-mode t)
+
+;; whitespace mode configuration
+(setq whitespace-line-column 117)
+
+;; Don't add unintentional new lines at the end of buffer
+(setq next-line-add-newlines nil)
+
+(setq require-final-newline t)
+(setq transient-mark-mode t)
+(setq x-select-enable-clipboard t)
+
+;; Disable backup/autosave
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+
+;; No tabs-- use spaces when indenting (doesn't affect Makefiles,
+;; does affect text files and code, doesn't affect existing tabs).
+;; The use of setq-default means this only affects modes that don't
+;; overwrite this setting.
+(setq-default indent-tabs-mode nil)
+(setq tab-width 2)
+
+;; Always use subword-mode (causes keys like \M-f \M-b to operate over individual chunks of camel case words)
+(global-subword-mode t)
+
+;; Always revert files when they change on disk
+(global-auto-revert-mode t)
+
+(mouse-avoidance-mode 'exile)
+
 ;;
 ;; Rename file/buffer to new-name (from Stevey)
 ;;
@@ -112,13 +144,4 @@ instead."
             word)
         (error "No symbol found")))))
 
-;; function to start a shell in a given dir, and rename the shell
-(defun init-shell (starting-dir name)
-  (cd starting-dir)
-  (shell)
-  (rename-buffer name))
-
-;; function to start dired in a given directory, with buffer name name
-(defun init-dired (starting-dir name)
-  (dired starting-dir)
-  (rename-buffer name))
+(provide 'mbeenen-editor)

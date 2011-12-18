@@ -27,3 +27,5 @@
 )
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
+
+(provide 'mbeenen-java)

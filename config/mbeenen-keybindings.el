@@ -21,10 +21,6 @@
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
-;; Another keymap to C-q
-(global-set-key (kbd "C-q") nil)
-(define-prefix-command 'mbeenen-aux-custom-map)
-(global-set-key (kbd "C-q") 'mbeenen-aux-custom-map)
 
 ;; get off the backspace key
 (global-set-key "\C-w" 'backward-kill-word)
@@ -54,3 +50,5 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+(provide 'mbeenen-keybindings)

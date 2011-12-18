@@ -8,3 +8,10 @@
   (define-key dired-mode-map (kbd "C-c q") 'dired-do-query-replace-regexp))
 
 (add-hook 'dired-mode-hook 'dired-mode-keybindings)
+
+;; function to start dired in a given directory, with buffer name name
+(defun init-dired (starting-dir name)
+  (dired starting-dir)
+  (rename-buffer name))
+
+(provide 'mbeenen-dired)
