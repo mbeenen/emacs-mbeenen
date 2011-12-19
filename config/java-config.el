@@ -1,5 +1,3 @@
-(require 'java-mode-indent-annotations)
-
 (defun mbeenen-java-mode-setup ()
   (interactive)
   ;; Minor modes
@@ -28,4 +26,3 @@
 )
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
-

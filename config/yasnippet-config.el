@@ -1,3 +1,4 @@
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
 (yas/initialize)
 
