@@ -5,9 +5,6 @@
 (set-face-attribute 'cperl-array-face nil
                     :foreground "#f0dfaf")
 (set-face-attribute 'cperl-hash-face nil
-                    :foreground "#f0dfaf"
-                    :slant "italic"
-                    :weight "bold")
-
+                    :foreground "#f0dfaf")
 
 (provide 'mbeenen-perl)
