@@ -3,7 +3,7 @@
 (defun mbeenen-java-mode-setup ()
   (interactive)
   ;; Minor modes
-  (c-toggle-auto-newline -1)
+  (c-toggle-auto-newline)
   (setq c-hungry-delete-key t)
 
   ;; Indentation cleanup
@@ -17,6 +17,7 @@
   (c-set-offset 'arglist-close 'c-lineup-close-paren)
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-cont-nonempty '++)
+  (c-set-offset 'func-decl-cont '++)
 
   (setq tab-width 4)
 
@@ -24,8 +25,6 @@
   (set-face-attribute c-annotation-face nil
                     :foreground "#8cd0d3")
 
-  ;; (java-mode-indent-annotations-setup)
-  ;; (eclim-mode t)
 )
 
 (setq java-mode-hook (quote (mbeenen-java-mode-setup)))
