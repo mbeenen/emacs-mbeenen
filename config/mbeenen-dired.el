@@ -14,4 +14,19 @@
   (dired starting-dir)
   (rename-buffer name))
 
+;; Dired single and related code causes ^ and [Return] to not spawn a
+;; new buffer in Dired, but rather reuse the existing one.
+(require 'dired-single)
+
+(defun dired-single-init ()
+  "Bunch of stuff to run for dired, either immediately or when it's
+        loaded."
+  ;; <add other stuff here>
+  (define-key dired-mode-map [return] 'dired-single-buffer)
+  (define-key dired-mode-map "^"
+    (function
+     (lambda nil (interactive) (dired-single-buffer "..")))))
+
+(add-hook 'dired-load-hook 'dired-single-init)
+
 (provide 'mbeenen-dired)
