@@ -4,6 +4,7 @@
 ;; whitespace mode configuration
 (require 'whitespace)
 (setq whitespace-line-column 117)
+(setq whitespace-style (quote (face tabs trailing lines space-before-tab newline indentation empty space-after-tab tab-mark newline-mark)))
 
 ;; Don't add unintentional new lines at the end of buffer
 (setq next-line-add-newlines nil)
