@@ -27,7 +27,6 @@
 ;; (require 'mbeenen-yasnippet)
 
 ;; Configuration for various programming (or other major) modes
-(require 'mbeenen-mumamo)
 (require 'mbeenen-org)
 (require 'mbeenen-java)
 (require 'mbeenen-javascript)
@@ -38,3 +37,6 @@
 ;; Any home specific initialization code to run after loading
 ;; everything else
 (require 'mbeenen-home-startup)
+
+;; Desktop loading goes last
+(require 'mbeenen-desktop)
