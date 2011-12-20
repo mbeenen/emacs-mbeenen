@@ -30,6 +30,7 @@
 
 (add-to-list 'load-path "~/src-installs/org/lisp")
 (require 'mbeenen-org)
+(require 'mbeenen-cc-mode-local)
 (require 'mbeenen-java)
 (require 'mbeenen-javascript)
 (require 'mbeenen-perl)
