@@ -44,3 +44,6 @@
 (require 'mbeenen-work-init)
 (require 'mbeenen-mumamo)
 
+;; Load desktop last
+(require 'mbeenen-desktop)
+
