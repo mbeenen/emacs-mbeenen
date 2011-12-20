@@ -2,6 +2,7 @@
 (global-font-lock-mode t)
 
 ;; whitespace mode configuration
+(require 'whitespace)
 (setq whitespace-line-column 117)
 
 ;; Don't add unintentional new lines at the end of buffer
@@ -22,7 +23,8 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
 
-;; Always use subword-mode (causes keys like \M-f \M-b to operate over individual chunks of camel case words)
+;; Always use subword-mode (causes keys like \M-f \M-b to operate over
+;; individual chunks of camel case words)
 (global-subword-mode t)
 
 ;; Always revert files when they change on disk
@@ -34,7 +36,8 @@
 ;; Rename file/buffer to new-name (from Stevey)
 ;;
 (defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME." (interactive "sNew name: ")
+  "Renames both current buffer and file it's visiting to NEW-NAME."
+  (interactive "sNew name: ")
   (let ((name (buffer-name))
         (filename (buffer-file-name)))
     (if (not filename)
@@ -50,7 +53,8 @@
 ;; Move a file/buffer to a different directory (from Stevey)
 ;;
 (defun move-buffer-file (dir)
-  "Moves both current buffer and file it's visiting to DIR." (interactive "DNew directory: ")
+  "Moves both current buffer and file it's visiting to DIR."
+  (interactive "DNew directory: ")
   (let* ((name (buffer-name))
          (filename (buffer-file-name))
          (dir

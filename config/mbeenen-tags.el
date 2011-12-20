@@ -1,5 +1,6 @@
 ;; Etags
 (require 'etags)
+(require 'ctags)
 
 (require 'etags-select)
 (require 'etags-table)
