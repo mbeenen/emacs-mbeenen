@@ -1,6 +1,7 @@
 (defconst my-c-style
   '(
     (c-hanging-braces-alist . ((topmost-intro after)
+                               (defun-open after)
                                (brace-list-open)
                                (brace-entry-open)
                                (statement-cont)
