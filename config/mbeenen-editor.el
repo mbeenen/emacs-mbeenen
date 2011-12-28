@@ -3,6 +3,7 @@
 
 ;; whitespace mode configuration
 (require 'whitespace)
+(setq-default fill-column 117)
 (setq whitespace-line-column 117)
 (setq whitespace-style (quote (face tabs trailing lines space-before-tab newline indentation empty space-after-tab tab-mark newline-mark)))
 ;; post-command-hook seems to slow things down because it has to keep
