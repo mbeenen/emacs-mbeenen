@@ -8,6 +8,12 @@
 (setq ido-max-directory-size 100000)
 (ido-mode 1)
 
+;; Ido minibuffer keybindings
+(defun mbeenen-ido-minibuffer-setup ()
+  (define-key ido-file-completion-map (kbd "C-w") 'ido-delete-backward-updir))
+
+(add-hook 'ido-minibuffer-setup-hook 'mbeenen-ido-minibuffer-setup)
+
 (defun ido-find-tag ()
   "Find a tag using ido"
   (interactive)
