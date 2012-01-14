@@ -27,6 +27,6 @@
     (function
      (lambda nil (interactive) (dired-single-buffer "..")))))
 
-(add-hook 'dired-load-hook 'dired-single-init)
+(add-hook 'dired-mode-hook 'dired-single-init)
 
 (provide 'mbeenen-dired)
