@@ -1,6 +1,3 @@
-;; turn on font-lock mode
-(global-font-lock-mode t)
-
 ;; whitespace mode configuration
 (require 'whitespace)
 (setq-default fill-column 117)
@@ -12,30 +9,9 @@
 ;; track of the point. Doesn't seem to much important, as far as I can tell.
 (defun whitespace-post-command-hook ())
 
-;; Don't add unintentional new lines at the end of buffer
-(setq next-line-add-newlines nil)
-
-(setq require-final-newline t)
-(setq transient-mark-mode t)
-(setq x-select-enable-clipboard t)
-
-;; Disable backup/autosave
-(setq backup-inhibited t)
-(setq auto-save-default nil)
-
-;; No tabs-- use spaces when indenting (doesn't affect Makefiles,
-;; does affect text files and code, doesn't affect existing tabs).
-;; The use of setq-default means this only affects modes that don't
-;; overwrite this setting.
-(setq-default indent-tabs-mode nil)
-(setq tab-width 2)
-
 ;; Always use subword-mode (causes keys like \M-f \M-b to operate over
 ;; individual chunks of camel case words)
 (global-subword-mode t)
-
-;; Always revert files when they change on disk
-(global-auto-revert-mode t)
 
 (mouse-avoidance-mode 'exile)
 

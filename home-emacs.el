@@ -27,6 +27,10 @@ not available from el-get")
 ;; Set any home specific variables for setup
 (require 'mbeenen-home-env)
 
+;; Set some basic defaults
+(require 'mbeenen-defaults)
+
+;; Load the main modules
 (require 'mbeenen-ui)
 (require 'mbeenen-editor)
 (require 'mbeenen-ido)
