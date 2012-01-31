@@ -51,6 +51,7 @@ not available from el-get")
 (require 'mbeenen-perl)
 
 (require 'mbeenen-keybindings)
+(require 'mbeenen-mode-mappings)
 
 ;; Any home specific initialization code to run after loading
 ;; everything else

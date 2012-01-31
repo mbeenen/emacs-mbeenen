@@ -22,7 +22,6 @@
                                (concat org-dir "/refile.org")
                                (concat org-dir "/someday.org")))
 (setq org-default-notes-file (concat org-dir "/refile.org"))
-(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)
 

@@ -50,6 +50,7 @@
 (require 'mbeenen-perl)
 
 (require 'mbeenen-keybindings)
+(require 'mbeenen-mode-mappings)
 
 ;; Any work specific initialization code to run after loading
 ;; everything else
