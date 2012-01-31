@@ -55,4 +55,9 @@
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; Magit
+(global-set-key (kbd "C-x m") 'magit-status-fullscreen)
+(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+(define-key magit-status-mode-map (kbd "C-x C-k") 'magit-kill-file-on-line)
+
 (provide 'mbeenen-keybindings)
