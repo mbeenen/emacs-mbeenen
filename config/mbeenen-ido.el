@@ -220,7 +220,6 @@ name for the two files, moving up the directory tree step by step."
           (add-to-list 'name-and-pos (cons name position))))))))
 
 ;; SMEX
-(add-to-list 'load-path "~/.emacs.d/smex")
 (require 'smex)
 (smex-initialize)
 
