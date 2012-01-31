@@ -6,13 +6,27 @@
   "This directory houses elisp libs/extensions that are not available from el-get")
 (defvar emacs-work-dir (concat emacs-config-dir "work/")
   "This directory houses all the work specific configuration")
+(defvar emacs-site-lisp-dir (concat root-dir "site-lisp/")
+  "This directory houses other extensions and git submodules")
 
 (add-to-list 'load-path emacs-config-dir)
 (add-to-list 'load-path emacs-vendor-dir)
 (add-to-list 'load-path emacs-work-dir)
+(add-to-list 'load-path emacs-site-lisp-dir)
+
+;; Add external projects to load path
+(dolist (project (directory-files emacs-site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "mbeenen-custom.el" emacs-config-dir))
+(load custom-file)
 
 ;; Set any work specific variables for setup
 (require 'mbeenen-work-env)
+
+(require 'mbeenen-defaults)
 
 (require 'mbeenen-ui)
 (require 'mbeenen-editor)
@@ -47,4 +61,3 @@
 
 ;; Load desktop last
 (require 'mbeenen-desktop)
-
