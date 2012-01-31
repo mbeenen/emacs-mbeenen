@@ -1,8 +1,22 @@
+;; Make dired less verbose
+(require 'dired-details+)
+(setq-default dired-details-hidden-string "--- ")
+
+;; Always reload dired after creating a directory
+(defadvice dired-create-directory (after revert-buffer-after-create)
+  (revert-buffer))
+(ad-activate 'dired-create-directory)
+
 ;; Enable dired-x
 (add-hook 'dired-load-hook
           (function (lambda () (load "dired-x"))))
 
+(defun dired-back-to-start-of-files ()
+  (interactive)
+  (backward-char (- (current-column) 2)))
+
 (defun dired-mode-keybindings ()
+  (define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
   (define-key dired-mode-map (kbd "C-c f") 'dired-mark-files-regexp)
   (define-key dired-mode-map (kbd "C-c g") 'dired-mark-files-containing-regexp)
   (define-key dired-mode-map (kbd "C-c q") 'dired-do-query-replace-regexp))
