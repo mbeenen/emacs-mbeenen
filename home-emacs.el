@@ -3,13 +3,26 @@
 (defvar emacs-config-dir (concat root-dir "config/")
   "This directory houses all of the main configuration.")
 (defvar emacs-vendor-dir (concat root-dir "vendor/")
-  "This directory houses elisp libs/extensions that are not available from el-get")
+  "(DEPRECATED IN FAVOR OF SITE-LISP) This directory houses elisp libs/extensions that are
+not available from el-get")
 (defvar emacs-home-dir (concat emacs-config-dir "home/")
   "This directory houses all the home specific configuration")
+(defvar emacs-site-lisp-dir (concat root-dir "site-lisp/")
+  "This directory houses other extensions and git submodules")
 
 (add-to-list 'load-path emacs-config-dir)
 (add-to-list 'load-path emacs-vendor-dir)
 (add-to-list 'load-path emacs-home-dir)
+(add-to-list 'load-path emacs-site-lisp-dir)
+
+;; Add external projects to load path
+(dolist (project (directory-files emacs-site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "mbeenen-custom.el" emacs-config-dir))
+(load custom-file)
 
 ;; Set any home specific variables for setup
 (require 'mbeenen-home-env)
