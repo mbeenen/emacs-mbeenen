@@ -59,4 +59,7 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 (define-key magit-status-mode-map (kbd "C-x C-k") 'magit-kill-file-on-line)
 
+;;Ace-jump-mode
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (provide 'mbeenen-keybindings)

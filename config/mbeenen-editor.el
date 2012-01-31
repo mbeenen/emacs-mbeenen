@@ -131,4 +131,6 @@ instead."
             word)
         (error "No symbol found")))))
 
+(require 'ace-jump-mode)
+
 (provide 'mbeenen-editor)
