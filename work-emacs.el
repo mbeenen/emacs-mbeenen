@@ -40,8 +40,13 @@
 (require 'mbeenen-erc)
 ;; (require 'mbeenen-yasnippet)
 
-;; Configuration for various programming (or other major) modes
+;; Functions (load all files in defuns-dir)
+(setq defuns-dir (expand-file-name "defuns" root-dir))
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
 
+;; Configuration for various programming (or other major) modes
 (add-to-list 'load-path "~/src-installs/org/lisp")
 (require 'mbeenen-org)
 (require 'mbeenen-cc-mode-local)

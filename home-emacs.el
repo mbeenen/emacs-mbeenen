@@ -44,6 +44,12 @@ not available from el-get")
 (require 'mbeenen-erc)
 ;; (require 'mbeenen-yasnippet)
 
+;; Functions (load all files in defuns-dir)
+(setq defuns-dir (expand-file-name "defuns" root-dir))
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-org)
 (require 'mbeenen-java)
