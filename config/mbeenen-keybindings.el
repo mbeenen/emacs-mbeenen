@@ -21,6 +21,22 @@
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
 
+;; file finding
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+
+;; move more quickly
+(global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
+(global-set-key (kbd "C-a") 'move-start-of-line-or-prev-line)
+
+;; Delete region (don't put it in the kill-ring)
+(global-set-key (kbd "C-c C-w") 'delete-region)
+
+;; Yank and indent
+(global-set-key (kbd "C-S-y") 'yank-indented)
+
+;; Toggle quotes
+(global-set-key (kbd "C-\"") 'toggle-quotes)
+
 ;; get off the backspace key
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
