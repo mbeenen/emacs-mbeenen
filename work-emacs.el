@@ -63,6 +63,7 @@
 (require 'mbeenen-work-color-theme)
 (require 'mbeenen-work-init)
 (require 'mbeenen-work-logs)
+(require 'mbeenen-work-keybindings)
 (require 'mbeenen-mumamo)
 
 ;; Load desktop last
