@@ -46,6 +46,7 @@ not available from el-get")
 
 ;; Load any site-lisp that doesn't require much config
 (require 'recall-position)
+(require 'expand-region)
 
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-org)

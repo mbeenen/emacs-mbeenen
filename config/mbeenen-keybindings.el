@@ -79,6 +79,9 @@
 (global-set-key (kbd "C-c C-r") 'remember-buffer-pos)
 (global-set-key (kbd "C-c C-s") 'recall-buffer-pos)
 
+;; expand-region
+(global-set-key (kbd "C-@") 'er/expand-region)
+
 ;;Ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
