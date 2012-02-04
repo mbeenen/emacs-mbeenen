@@ -46,6 +46,9 @@
   (when (file-regular-p file)
     (load file)))
 
+;; Load any site-lisp that doesn't require much config
+(require 'recall-position)
+
 ;; Configuration for various programming (or other major) modes
 (add-to-list 'load-path "~/src-installs/org/lisp")
 (require 'mbeenen-org)

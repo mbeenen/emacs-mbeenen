@@ -50,6 +50,9 @@ not available from el-get")
   (when (file-regular-p file)
     (load file)))
 
+;; Load any site-lisp that doesn't require much config
+(require 'recall-position)
+
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-org)
 (require 'mbeenen-java)

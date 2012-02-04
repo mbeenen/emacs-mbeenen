@@ -75,6 +75,10 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 (define-key magit-status-mode-map (kbd "C-x C-k") 'magit-kill-file-on-line)
 
+;; Recall-position
+(global-set-key (kbd "C-c C-r") 'remember-buffer-pos)
+(global-set-key (kbd "C-c C-s") 'recall-buffer-pos)
+
 ;;Ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
