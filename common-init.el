@@ -47,6 +47,9 @@ not available from el-get")
 ;; Load any site-lisp that doesn't require much config
 (require 'recall-position)
 (require 'expand-region)
+(require 'inline-string-rectangle)
+(require 'mark-more-like-this)
+(require 'rename-sgml-tag)
 
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-org)
