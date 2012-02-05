@@ -65,8 +65,8 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; Lines should be 80 characters wide, not 72
-(setq fill-column 80)
+;; 120 characters is about how many before wrapping (with vertical split)
+(setq fill-column 120)
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)
