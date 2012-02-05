@@ -92,6 +92,11 @@ instead."
             word)
         (error "No symbol found")))))
 
-(require 'ace-jump-mode)
+;; show-paren-mode: subtle highlighting of matching parens
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
+;; highlight the current line
+(global-hl-line-mode +1)
 
 (provide 'mbeenen-editor)

@@ -53,6 +53,11 @@
 (put 'transient-mark-mode 'permanent-local t)
 (setq-default transient-mark-mode t)
 
+;; smart indenting and pairing for all
+(electric-pair-mode t)
+(electric-indent-mode t)
+(electric-layout-mode t)
+
 ;; Remove text in active region if inserting text
 (delete-selection-mode 1)
 
@@ -80,5 +85,16 @@
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+
+;; tramp, for sudo access
+(require 'tramp)
+;; keep in mind known issues with zsh - see emacs wiki
+(setq tramp-default-method "ssh")
+
+;; auto-completion in minibuffer
+(icomplete-mode +1)
 
 (provide 'mbeenen-defaults)

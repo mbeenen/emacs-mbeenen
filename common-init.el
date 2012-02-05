@@ -1,5 +1,5 @@
 (defvar root-dir (file-name-directory load-file-name)
-  "The root dir of the Emacs Prelude distribution.")
+  "The root dir of my Emacs configuration.")
 (defvar emacs-config-dir (concat root-dir "config/")
   "This directory houses all of the main configuration.")
 (defvar emacs-vendor-dir (concat root-dir "vendor/")
@@ -17,6 +17,9 @@ not available from el-get")
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
+;; load emacs-prelude
+;; (load-file (concat emacs-site-lisp-dir "emacs-prelude/init.el"))
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "mbeenen-custom.el" emacs-config-dir))
 (load custom-file)
@@ -25,6 +28,7 @@ not available from el-get")
 (require 'mbeenen-defaults)
 
 ;; Load the main modules
+(require 'mbeenen-packages)
 (require 'mbeenen-ui)
 (require 'mbeenen-editor)
 (require 'mbeenen-ido)
@@ -32,6 +36,8 @@ not available from el-get")
 (require 'mbeenen-hippie)
 (require 'mbeenen-midnight)
 (require 'mbeenen-magit)
+(require 'mbeenen-programming)
+(require 'mbeenen-projectile)
 (require 'mbeenen-shell)
 (require 'mbeenen-dired)
 (require 'mbeenen-tags)
@@ -45,6 +51,7 @@ not available from el-get")
     (load file)))
 
 ;; Load any site-lisp that doesn't require much config
+(require 'ace-jump-mode)
 (require 'recall-position)
 (require 'expand-region)
 (require 'inline-string-rectangle)

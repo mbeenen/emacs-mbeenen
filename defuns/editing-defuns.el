@@ -183,3 +183,71 @@ region-end is used. Adds the duplicated text to the kill ring."
          (current-word (buffer-substring-no-properties beg end))
          (snakified (snake-case current-word)))
     (replace-string current-word snakified nil beg end)))
+
+(defun prelude-move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (previous-line 2))
+
+(global-set-key [(control shift up)] 'prelude-move-line-up)
+
+(defun prelude-move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (next-line 1)
+  (transpose-lines 1)
+  (previous-line 1))
+
+(global-set-key [(control shift down)] 'prelude-move-line-down)
+
+;; add the ability to copy and cut the current line, without marking it
+(defadvice kill-ring-save (before slick-copy activate compile)
+  "When called interactively with no active region, copy a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (message "Copied line")
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
+
+(defadvice kill-region (before slick-cut activate compile)
+  "When called interactively with no active region, kill a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
+
+(defun prelude-annotate-todo ()
+  "Put fringe marker on TODO: lines in the curent buffer."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "TODO:" nil t)
+      (let ((overlay (make-overlay (- (point) 5) (point))))
+        (overlay-put overlay
+                     'before-string
+                     (propertize (format "A")
+                                 'display '(left-fringe right-triangle)))))))
+
+(defun prelude-sudo-edit (&optional arg)
+  (interactive "p")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(defun prelude-swap-windows ()
+  "If you have 2 windows, it swaps them."
+  (interactive)
+  (if (/= (count-windows) 2)
+      (message "You need exactly 2 windows to do this.")
+    (let* ((w1 (first (window-list)))
+           (w2 (second (window-list)))
+           (b1 (window-buffer w1))
+           (b2 (window-buffer w2))
+           (s1 (window-start w1))
+           (s2 (window-start w2)))
+      (set-window-buffer w1 b2)
+      (set-window-buffer w2 b1)
+      (set-window-start w1 s2)
+      (set-window-start w2 s1)))
+  (other-window 1))
