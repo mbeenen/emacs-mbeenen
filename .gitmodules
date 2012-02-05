@@ -1,0 +1,16 @@
+[submodule "site-lisp/ace-jump-mode"]
+        path = site-lisp/ace-jump-mode
+        url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule "site-lisp/recall-position"]
+        path = site-lisp/recall-position
+        url = https://github.com/cjohansen/recall-position.el.git
+[submodule "site-lisp/expand-region"]
+        path = site-lisp/expand-region
+        url = https://github.com/magnars/expand-region.el.git
+[submodule "site-lisp/mark-multiple"]
+        path = site-lisp/mark-multiple
+        url = https://github.com/magnars/mark-multiple.el.git
+[submodule "site-lisp/projectile"]
+	path = site-lisp/projectile
+	url = git@github.com:mbeenen/projectile.git
+
