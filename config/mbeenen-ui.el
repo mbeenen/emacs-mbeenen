@@ -31,7 +31,6 @@
 (column-number-mode t)
 (size-indication-mode t)
 
-(require 'zenburn)
 ;; use zenburn as the default theme
 (load-theme 'zenburn t)
 
