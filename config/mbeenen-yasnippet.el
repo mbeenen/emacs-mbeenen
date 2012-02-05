@@ -5,9 +5,9 @@
 (setq yas/prompt-functions '(yas/ido-prompt))
 
 ;; Setup my snippets directory
-(setq yas/root-directory (concat root-dir "snippets"))
-(yas/load-directory yas/root-directory)
-
+(setq yas/root-directory (list
+                          emacs-snippet-dir))
+(yas/reload-all)
 (yas/global-mode t)
 
 (provide 'mbeenen-yasnippet)

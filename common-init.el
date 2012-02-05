@@ -4,6 +4,8 @@
   "This directory houses all of the main configuration.")
 (defvar emacs-site-lisp-dir (concat root-dir "site-lisp/")
   "This directory houses other extensions and git submodules")
+(defvar emacs-snippet-dir (concat root-dir "snippets/")
+  "This directory contains all snippets for yasnippet")
 
 (add-to-list 'load-path emacs-config-dir)
 (add-to-list 'load-path emacs-site-lisp-dir)

@@ -22,3 +22,6 @@
 [submodule "site-lisp/js2-mode"]
 	path = site-lisp/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "snippets/java-mode/yasnippet-java-mode"]
+	path = snippets/java-mode/yasnippet-java-mode
+	url = https://github.com/nekop/yasnippet-java-mode.git
