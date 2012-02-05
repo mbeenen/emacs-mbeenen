@@ -13,9 +13,6 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-;; load emacs-prelude
-;; (load-file (concat emacs-site-lisp-dir "emacs-prelude/init.el"))
-
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "mbeenen-custom.el" emacs-config-dir))
 (load custom-file)
@@ -27,12 +24,12 @@
 (require 'mbeenen-packages)
 (require 'mbeenen-ui)
 (require 'mbeenen-editor)
+(require 'mbeenen-programming)
 (require 'mbeenen-ido)
 (require 'mbeenen-grep)
 (require 'mbeenen-hippie)
 (require 'mbeenen-midnight)
 (require 'mbeenen-magit)
-(require 'mbeenen-programming)
 (require 'mbeenen-projectile)
 (require 'mbeenen-shell)
 (require 'mbeenen-dired)
@@ -48,18 +45,21 @@
 
 ;; Load any site-lisp that doesn't require much config
 (require 'ace-jump-mode)
-(require 'recall-position)
+(require 'css-complete)
 (require 'expand-region)
 (require 'inline-string-rectangle)
+(require 'magithub)
 (require 'mark-more-like-this)
+(require 'recall-position)
 (require 'rename-sgml-tag)
 
 ;; Configuration for various programming (or other major) modes
-(require 'mbeenen-org)
 (require 'mbeenen-java)
 (require 'mbeenen-javascript)
+(require 'mbeenen-org)
 (require 'mbeenen-perl)
 
+;; initialize global keybindings and mode mappings
 (require 'mbeenen-keybindings)
 (require 'mbeenen-mode-mappings)
 
