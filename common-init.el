@@ -2,14 +2,10 @@
   "The root dir of my Emacs configuration.")
 (defvar emacs-config-dir (concat root-dir "config/")
   "This directory houses all of the main configuration.")
-(defvar emacs-vendor-dir (concat root-dir "vendor/")
-  "(DEPRECATED IN FAVOR OF SITE-LISP) This directory houses elisp libs/extensions that are
-not available from el-get")
 (defvar emacs-site-lisp-dir (concat root-dir "site-lisp/")
   "This directory houses other extensions and git submodules")
 
 (add-to-list 'load-path emacs-config-dir)
-(add-to-list 'load-path emacs-vendor-dir)
 (add-to-list 'load-path emacs-site-lisp-dir)
 
 ;; Add external projects to load path
