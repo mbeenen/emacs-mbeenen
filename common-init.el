@@ -35,7 +35,7 @@
 (require 'mbeenen-shell)
 (require 'mbeenen-tags)
 (require 'mbeenen-ui)
-;; (require 'mbeenen-yasnippet)
+(require 'mbeenen-yasnippet)
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" root-dir))

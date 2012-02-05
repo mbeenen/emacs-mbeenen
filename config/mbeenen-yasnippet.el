@@ -5,7 +5,9 @@
 (setq yas/prompt-functions '(yas/ido-prompt))
 
 ;; Setup my snippets directory
-(setq yas/root-directory "~/projects/emacs-mbeenen/mysnippets")
+(setq yas/root-directory (concat root-dir "snippets"))
 (yas/load-directory yas/root-directory)
+
+(yas/global-mode t)
 
 (provide 'mbeenen-yasnippet)
