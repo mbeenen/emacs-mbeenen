@@ -19,3 +19,6 @@
 [submodule "site-lisp/magithub"]
 	path = site-lisp/magithub
 	url = https://github.com/nex3/magithub.git
+[submodule "site-lisp/js2-mode"]
+	path = site-lisp/js2-mode
+	url = https://github.com/mooz/js2-mode.git
