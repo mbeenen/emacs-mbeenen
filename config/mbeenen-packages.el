@@ -5,7 +5,7 @@
 
 (defvar mbeenen-packages
   '(color-theme ctags dired-single etags-select etags-table paredit smex yasnippet
-                zenburn-theme)
+                )
   "A list of packages to ensure are installed at launch.")
 
 (defun mbeenen-packages-installed-p ()

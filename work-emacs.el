@@ -1,4 +1,5 @@
 ;; TODO: Define work env variables
+(defvar org-dir "~/emacs/org")
 
 (require 'common-init)
 
@@ -10,7 +11,7 @@
 ;; Any work specific initialization code to run after loading
 ;; everything else
 (require 'mbeenen-work-amazon)
-(require 'mbeenen-work-color-theme)
+;; (require 'mbeenen-work-color-theme)
 (require 'mbeenen-work-init)
 (require 'mbeenen-work-logs)
 (require 'mbeenen-work-keybindings)

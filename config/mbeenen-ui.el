@@ -32,6 +32,6 @@
 (size-indication-mode t)
 
 ;; use zenburn as the default theme
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
 
 (provide 'mbeenen-ui)
