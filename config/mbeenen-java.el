@@ -87,6 +87,6 @@
   )
 
 (add-hook 'java-mode-hook 'mbeenen-java-mode-setup)
-(add-hook 'java-mode-hook 'prelude-prog-mode-hook)
+(add-hook 'java-mode-hook 'prog-mode-hook)
 
 (provide 'mbeenen-java)
