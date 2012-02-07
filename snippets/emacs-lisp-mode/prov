@@ -1,0 +1,4 @@
+# -*- mode: yasnippet -*-
+#name : (provide '...)
+# --
+(provide '$0)
