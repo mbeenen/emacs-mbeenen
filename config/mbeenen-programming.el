@@ -38,6 +38,6 @@
 
 ;; in Emacs 24 programming major modes generally derive
 ;; from a common mode named prog-mode
-(add-hook 'prog-mode-hook 'mbeenen-prog-mode-hook)
+;; (add-hook 'prog-mode-hook 'mbeenen-prog-mode-hook)
 
 (provide 'mbeenen-programming)

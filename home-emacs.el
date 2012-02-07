@@ -10,6 +10,7 @@
 ;; Any home specific initialization code to run after loading
 ;; everything else
 (require 'mbeenen-home-startup)
+(require 'mbeenen-home-color-theme)
 
 ;; Desktop loading goes last
 (require 'mbeenen-desktop)
