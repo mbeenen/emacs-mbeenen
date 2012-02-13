@@ -21,6 +21,10 @@
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
 
+(global-set-key (kbd "C-q") nil)
+(define-prefix-command 'mbeenen-secondary-map)
+(global-set-key (kbd "C-q") 'mbeenen-secondary-map)
+
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
@@ -76,6 +80,8 @@
 (define-key magit-status-mode-map (kbd "C-x C-k") 'magit-kill-file-on-line)
 
 ;; Recall-position
+(define-key mbeenen-secondary-map (kbd "C-r") 'remember-buffer-pos)
+(define-key mbeenen-secondary-map (kbd "C-s") 'recall-buffer-pos)
 (global-set-key (kbd "C-c C-r") 'remember-buffer-pos)
 (global-set-key (kbd "C-c C-s") 'recall-buffer-pos)
 
