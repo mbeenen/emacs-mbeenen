@@ -91,9 +91,9 @@
 
 ;; HACK: providing some libraries of semantic that no longer exist (they are built in), which
 ;; jdibug requires
-(semantic-mode 1)
-(provide 'semantic-lex)
-(provide 'semantic-java)
-(require 'jdibug)
+;; (semantic-mode 1)
+;; (provide 'semantic-lex)
+;; (provide 'semantic-java)
+;; (require 'jdibug)
 
 (provide 'mbeenen-java)
