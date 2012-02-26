@@ -9,7 +9,7 @@
             ;; yasnippet
             (make-variable-buffer-local 'yas/trigger-key)
             (org-set-local 'yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field-group)
+            (define-key yas/keymap [tab] 'yas/next-field)
             ;; flyspell mode for spell checking everywhere
             ;; (flyspell-mode 1)
             ;; Undefine C-c [ and C-c ] since this breaks my org-agenda files when directories are include
