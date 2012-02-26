@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : meth
+#key : meth
+# --
+${1:public} ${2:void} ${3:name}(${4:args}) {
+   $0
+}

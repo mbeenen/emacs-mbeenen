@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : System.out.print
+#key : pnb
+# --
+System.out.print($1);$0

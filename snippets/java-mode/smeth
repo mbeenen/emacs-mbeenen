@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : smeth
+#key : smeth
+# --
+${1:public} static ${2:void} ${3:name}(${4:args}) {
+   $0
+}
