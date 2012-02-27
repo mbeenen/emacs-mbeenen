@@ -28,6 +28,8 @@
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
+(define-key mbeenen-secondary-map (kbd "s") 'prelude-swap-windows)
+
 ;; move more quickly
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
 (global-set-key (kbd "C-a") 'move-start-of-line-or-prev-line)
