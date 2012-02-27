@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : constructor
+#key : cons
+# --
+${1:`(file-name-sans-extension (uniquify-buffer-base-name))`}($2) {
+    $0
+}
