@@ -27,7 +27,7 @@
                         (inclass . +)
                         (arglist-cont-nonempty . ++)
                         (arglist-cont c-lineup-gcc-asm-reg 0)
-                        (comment-intro c-lineup-knr-region-comment c-lineup-comment)
+                        (comment-intro 0) ;;c-lineup-knr-region-comment c-lineup-comment)
                         (catch-clause . 0)
                         (else-clause . 0)
                         (do-while-closure . 0)
