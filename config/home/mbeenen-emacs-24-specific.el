@@ -7,10 +7,13 @@
   "Execute the current java file"
   (interactive "P")
   (let ((args (if prompt
-                   (read-string "CLI args: "))))
+                  (read-string "CLI args: ")))
+        (path (mapconcat 'identity (nthcdr
+               5 (split-string (file-name-sans-extension (buffer-file-name)) "/")) "/")))
     (shell-command
-     (concat "java -cp \".:/home/michael/projects/thinking-in-java\" "
-             (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))
+     (concat "cd /home/michael/projects/thinking-in-java; "
+             "java -cp \".:/home/michael/projects/thinking-in-java\" "
+             path ;;(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))
              " " args))))
 
 ;; but not for java mode
