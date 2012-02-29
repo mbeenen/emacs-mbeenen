@@ -2,4 +2,6 @@
 #name : package
 #key : pa
 # --
-package `(replace-regexp-in-string "/" "." (replace-regexp-in-string (concat "/" (file-name-nondirectory (buffer-file-name))) "" (replace-regexp-in-string (replace-regexp-in-string "~" (getenv "HOME") (projectile-get-project-root)) "" (buffer-file-name))))`;$0
+package `(replace-regexp-in-string "/" "." (replace-regexp-in-string (concat "/" (file-name-nondirectory (buffer-file-name))) "" (replace-regexp-in-string (replace-regexp-in-string "~" (getenv "HOME") (projectile-get-project-root)) "" (buffer-file-name))))`;
+
+$0
