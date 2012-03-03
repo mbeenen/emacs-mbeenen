@@ -1,5 +1,4 @@
 (require 'yasnippet)
-(yas/initialize)
 
 ;; Prompt with an ido-style prompt for keys with multiple expansions
 (setq yas/prompt-functions '(yas/ido-prompt))
