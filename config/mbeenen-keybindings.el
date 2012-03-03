@@ -24,6 +24,7 @@
 (global-set-key (kbd "C-q") nil)
 (define-prefix-command 'mbeenen-secondary-map)
 (global-set-key (kbd "C-q") 'mbeenen-secondary-map)
+(global-set-key (kbd "C-q C-q") 'quoted-insert)
 
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
@@ -98,8 +99,5 @@
 (global-set-key (kbd "C-<") 'mark-previous-like-this)
 (global-set-key (kbd "C->") 'mark-next-like-this)
 (global-set-key (kbd "C-M-m") 'mark-more-like-this)
-
-;; yasnippet
-(define-key yas/keymap [tab] 'yas/expand)
 
 (provide 'mbeenen-keybindings)
