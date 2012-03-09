@@ -65,8 +65,7 @@
                         (statement-block-intro . +)
                         (topmost-intro-cont . +)
                         (inline-open . 0)))
-    (c-hanging-semi&comma-criteria c-semi&comma-no-newlines-before-nonblanks
-                                   c-semi&comma-inside-parenlist)
+    (c-hanging-semi&comma-criteria c-semi&comma-inside-parenlist)
     (c-echo-syntactic-information-p t))
   "My cc mode programming style")
 (c-add-style "PERSONAL" my-c-style)
