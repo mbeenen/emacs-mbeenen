@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : container
+#key : cont
+# --
+${1:List}<${2:type}> ${3:name} = new ${4:ArrayList}<$2>($5);
+$0

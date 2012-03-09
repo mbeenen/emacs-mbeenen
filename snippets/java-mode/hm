@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : hashmap
+#key : hm
+# --
+Map<${1:type}> ${2:name} = new HashMap<$1>($3);
+$0

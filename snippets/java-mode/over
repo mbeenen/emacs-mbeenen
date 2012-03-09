@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : override
+#key : over
+# --
+@Override
+$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : inter
+#key : inter
+# --
+public interface ${1:`(file-name-sans-extension (uniquify-buffer-base-name))`} {
+    $0
+}

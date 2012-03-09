@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: logWarn
+# key: lw
+# --
+logger.warn($1);$0

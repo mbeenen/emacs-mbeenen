@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : imeth
+#key : imeth
+# --
+public ${2:void} ${3:name}(${4:args});
+$0

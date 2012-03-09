@@ -1,8 +1,9 @@
 # -*- mode: snippet -*-
 #name : try, finally
-#key : trycf
+#key : tryf
 # --
 try {
-    $0
+    $1
 } finally {
+    $0
 }
