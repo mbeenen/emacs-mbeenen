@@ -20,14 +20,8 @@
 (defun mbeenen-home-java-setup ()
 
   (message "in home setup")
-  (make-local-variable 'electric-pair-mode)
-  (make-local-variable 'electric-indent-mode)
-  (make-local-variable 'electric-layout-mode)
   (make-local-variable 'compile-command)
 
-  (setq electric-pair-mode nil)
-  (setq electric-indent-mode nil)
-  (setq electric-layout-mode nil)
   (setq compile-command (concat "javac -cp \".:/home/michael/projects/thinking-in-java\" "
                                 (file-name-nondirectory (buffer-file-name))))
 
