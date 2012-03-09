@@ -9,4 +9,11 @@
 (yas/reload-all)
 (yas/global-mode t)
 
+(add-hook 'yas/after-exit-snippet-hook 'indent-relative)
+
+(defun snippet-mode-setup ()
+  (make-local-variable 'require-final-newline)
+  (setq require-final-newline nil))
+
+(add-hook 'snippet-mode-hook 'snippet-mode-setup)
 (provide 'mbeenen-yasnippet)
