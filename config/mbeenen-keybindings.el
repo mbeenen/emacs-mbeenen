@@ -46,8 +46,9 @@
 
 ;; get off the backspace key
 (global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key "\C-k" 'kill-region)
+(global-set-key "\C-x\C-k" 'kill-line)
+(global-set-key "\C-c\C-k" 'kill-line)
 (global-set-key (kbd "C-S-d") 'delete-backward-char)
 
 ;; Get rid of bury buffer shortcut
