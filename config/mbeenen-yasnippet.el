@@ -1,4 +1,5 @@
 (require 'yasnippet)
+(yas/initialize)
 
 ;; Prompt with an ido-style prompt for keys with multiple expansions
 (setq yas/prompt-functions '(yas/ido-prompt))
@@ -9,7 +10,7 @@
 (yas/reload-all)
 (yas/global-mode t)
 
-(add-hook 'yas/after-exit-snippet-hook 'indent-relative)
+(add-hook 'yas/after-exit-snippet-hook 'indent-for-tab-command)
 
 (defun snippet-mode-setup ()
   (make-local-variable 'require-final-newline)
