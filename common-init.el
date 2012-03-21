@@ -1,3 +1,5 @@
+(require 'cl)
+
 (defvar root-dir (file-name-directory load-file-name)
   "The root dir of my Emacs configuration.")
 (defvar emacs-config-dir (concat root-dir "config/")
