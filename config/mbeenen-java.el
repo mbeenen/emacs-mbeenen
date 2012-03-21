@@ -43,7 +43,7 @@
                         (block-close . 0)
                         (block-open . 0)
                         (inher-intro . +)
-                        (annotation-var-cont . +)
+                        (annotation-var-cont . 0)
                         (annotation-top-cont . 0)
                         (topmost-intro . 0)
                         (knr-argdecl . 0)
