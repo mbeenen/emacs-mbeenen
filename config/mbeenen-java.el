@@ -88,11 +88,4 @@
 (add-hook 'java-mode-hook 'mbeenen-java-mode-setup)
 (add-hook 'java-mode-hook 'mbeenen-prog-mode-hook)
 
-;; HACK: providing some libraries of semantic that no longer exist (they are built in), which
-;; jdibug requires
-;; (semantic-mode 1)
-;; (provide 'semantic-lex)
-;; (provide 'semantic-java)
-;; (require 'jdibug)
-
 (provide 'mbeenen-java)
