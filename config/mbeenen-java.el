@@ -1,3 +1,4 @@
+;; Style definition setup
 (defconst my-c-style
   '(
     (c-hanging-braces-alist . ((topmost-intro after)
@@ -87,5 +88,23 @@
 
 (add-hook 'java-mode-hook 'mbeenen-java-mode-setup)
 (add-hook 'java-mode-hook 'mbeenen-prog-mode-hook)
+
+;; UTILITY FUNCTIONS - shortcuts for operations I find myself frequently performing
+
+(defun disable-unit-tests ()
+  "Comment out all unit tests in the current buffer"
+  (interactive)
+  (save-excursion
+    (replace-string "void test" "void ttest" nil (point-min) (point-max))
+    (replace-string "@Test" "//@Test" nil (point-min) (point-max))
+    (replace-string "@org.junit.Test" "//@org.junit.Test" nil (point-min) (point-max))))
+
+(defun enable-unit-tests ()
+  "Uncomment all the unit tests in the current buffer"
+  (interactive)
+  (save-excursion
+    (replace-string "void ttest" "void test" nil (point-min) (point-max))
+    (replace-string "//@Test" "@Test" nil (point-min) (point-max))
+    (replace-string "//@org.junit.Test" "@org.junit.Test" nil (point-min) (point-max))))
 
 (provide 'mbeenen-java)

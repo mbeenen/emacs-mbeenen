@@ -13,6 +13,7 @@
 (require 'mbeenen-work-amazon)
 (require 'mbeenen-work-color-theme)
 (require 'mbeenen-work-init)
+(require 'mbeenen-work-java)
 (require 'mbeenen-work-logs)
 (require 'mbeenen-work-keybindings)
 (require 'mbeenen-mumamo)
