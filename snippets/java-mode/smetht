@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : smetht
+#key : smetht
+# --
+${1:public} static ${2:void} ${3:name}(${4:args}) throws ${5:Exception} {
+$0
+}
