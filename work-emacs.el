@@ -16,6 +16,7 @@
 (require 'mbeenen-work-java)
 (require 'mbeenen-work-logs)
 (require 'mbeenen-work-keybindings)
+(require 'mbeenen-work-mason)
 (require 'mbeenen-mumamo)
 
 ;; Load desktop last
