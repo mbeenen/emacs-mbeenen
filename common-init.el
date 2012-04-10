@@ -33,6 +33,7 @@
 (require 'mbeenen-grep)
 (require 'mbeenen-hippie)
 (require 'mbeenen-ido)
+(require 'mbeenen-keyboard-macros)
 (require 'mbeenen-magit)
 (require 'mbeenen-midnight)
 (require 'mbeenen-programming)
