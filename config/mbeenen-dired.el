@@ -43,4 +43,13 @@
 
 (add-hook 'dired-mode-hook 'dired-single-init)
 
+(require 'dired-x)
+
+(defun dired-x-init ()
+  "Initialization code for configuring dired-x"
+  (load "dired-x")
+  (dired-omit-mode 1))
+
+(add-hook 'dired-mode-hook 'dired-x-init)
+
 (provide 'mbeenen-dired)
