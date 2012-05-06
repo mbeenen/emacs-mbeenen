@@ -19,9 +19,7 @@
 ;; but not for java mode
 (defun mbeenen-home-java-setup ()
 
-  (message "in home setup")
   (make-local-variable 'compile-command)
-
   (setq compile-command (concat "javac -cp \".:/home/michael/projects/thinking-in-java\" "
                                 (file-name-nondirectory (buffer-file-name))))
 
