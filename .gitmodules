@@ -12,7 +12,7 @@
         url = https://github.com/magnars/mark-multiple.el.git
 [submodule "site-lisp/projectile"]
 	path = site-lisp/projectile
-	url = https://mbeenen@github.com/mbeenen/projectile.git
+	url = git://github.com/bbatsov/projectile.git
 [submodule "site-lisp/magit"]
 	path = site-lisp/magit
 	url = https://github.com/magit/magit.git
