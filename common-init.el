@@ -54,7 +54,6 @@
 (require 'css-complete)
 (require 'expand-region)
 (require 'inline-string-rectangle)
-(require 'magithub)
 (require 'mark-more-like-this)
 (require 'recall-position)
 (require 'rename-sgml-tag)
