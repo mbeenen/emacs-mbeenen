@@ -17,16 +17,16 @@
              " " args))))
 
 ;; but not for java mode
-(defun mbeenen-home-java-setup ()
+;; (defun mbeenen-home-java-setup ()
 
-  (make-local-variable 'compile-command)
-  (setq compile-command (concat "javac -cp \".:/home/michael/projects/thinking-in-java\" "
-                                (file-name-nondirectory (buffer-file-name))))
+;;   (make-local-variable 'compile-command)
+;;   (setq compile-command (concat "javac -cp \".:/home/michael/projects/thinking-in-java\" "
+;;                                 (file-name-nondirectory (buffer-file-name))))
 
-  (define-key java-mode-map (kbd "C-q C-j") 'mbeenen-home-java-run)
+;;   (define-key java-mode-map (kbd "C-q C-j") 'mbeenen-home-java-run)
 
-  )
+;;   )
 
-(add-hook 'java-mode-hook 'mbeenen-home-java-setup)
+;; (add-hook 'java-mode-hook 'mbeenen-home-java-setup)
 
 (provide 'mbeenen-emacs-24-specific)

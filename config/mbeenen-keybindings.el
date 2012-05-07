@@ -2,6 +2,7 @@
 (global-set-key (kbd "C-z") nil)
 (define-prefix-command 'mbeenen-custom-map)
 (global-set-key (kbd "C-z") 'mbeenen-custom-map)
+
 ;; My custom keybindings
 (define-key mbeenen-custom-map (kbd "c") 'compile)
 (define-key mbeenen-custom-map (kbd "g") 'grep)
@@ -21,15 +22,10 @@
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
 
-(global-set-key (kbd "C-q") nil)
-(define-prefix-command 'mbeenen-secondary-map)
-(global-set-key (kbd "C-q") 'mbeenen-secondary-map)
-(global-set-key (kbd "C-q C-q") 'quoted-insert)
-
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
-(define-key mbeenen-secondary-map (kbd "s") 'prelude-swap-windows)
+
 
 ;; move more quickly
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
@@ -73,7 +69,7 @@
 ;; hippie expand
 (global-set-key "\M-/" 'hippie-expand)
 
-;; SMEX
+;; SMEX (Ido-based M-x)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -83,11 +79,22 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 (define-key magit-status-mode-map (kbd "C-x C-k") 'magit-kill-file-on-line)
 
+;; Secondary keybinding map
+(global-set-key (kbd "C-q") nil)
+(define-prefix-command 'mbeenen-secondary-map)
+(global-set-key (kbd "C-q") 'mbeenen-secondary-map)
+(global-set-key (kbd "C-q C-q") 'quoted-insert)
+
+(define-key mbeenen-secondary-map (kbd "s") 'prelude-swap-windows)
+
 ;; Recall-position
 (define-key mbeenen-secondary-map (kbd "C-r") 'remember-buffer-pos)
 (define-key mbeenen-secondary-map (kbd "C-s") 'recall-buffer-pos)
-(global-set-key (kbd "C-c C-r") 'remember-buffer-pos)
-(global-set-key (kbd "C-c C-s") 'recall-buffer-pos)
+
+;; Projectile project commands
+(define-key mbeenen-secondary-map (kbd "C-c") 'projectile-compile-project)
+(define-key mbeenen-secondary-map (kbd "C-t") 'projectile-test-project)
+(define-key mbeenen-secondary-map (kbd "C-x") 'projectile-run-project)
 
 ;; expand-region
 (global-set-key (kbd "C-@") 'er/expand-region)
