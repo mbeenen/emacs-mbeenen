@@ -104,7 +104,7 @@
   (interactive)
   (save-excursion
     (replace-string "void ttest" "void test" nil (point-min) (point-max))
-    (replace-string "//@Test" "@Test" nil (point-min) (point-max))
-    (replace-string "//@org.junit.Test" "@org.junit.Test" nil (point-min) (point-max))))
+    (replace-regexp "//+@Test" "@Test" nil (point-min) (point-max))
+    (replace-regexp "//+@org.junit.Test" "@org.junit.Test" nil (point-min) (point-max))))
 
 (provide 'mbeenen-java)
