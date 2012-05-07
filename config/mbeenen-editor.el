@@ -3,8 +3,7 @@
 (setq-default fill-column 117)
 (setq whitespace-line-column 117)
 (setq whitespace-style
-      (quote (face tabs trailing lines-tail space-before-tab
-                   indentation space-after-tab tab-mark)))
+      (quote (face tabs space-before-tab indentation space-after-tab tab-mark)))
 ;; post-command-hook seems to slow things down because it has to keep
 ;; track of the point. Doesn't seem to much important, as far as I can tell.
 (defun whitespace-post-command-hook ())
