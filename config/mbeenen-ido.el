@@ -160,9 +160,8 @@ name for the two files, moving up the directory tree step by step."
                         (mode . perl-mode)))
                ("tags" (mode . tags-table-mode))
                ("erc" (mode . erc-mode))
-               ("emacs" (or
-                         (name . "^\\*scratch\\*$")
-                         (name . "^\\*Messages\\*$")))
+               ("tramp" (name . "^\\*tramp"))
+               ("special" (name . "^\\*.*\\*$"))
                ))
              )
       )
