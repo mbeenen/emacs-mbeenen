@@ -235,6 +235,10 @@ region-end is used. Adds the duplicated text to the kill ring."
       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+(defun sudo-shell-command (command)
+  (interactive "sSudo command: ")
+  (shell-command (concat "echo " (read-passwd "Password: ") " | sudo -S " command)))
+
 (defun prelude-swap-windows ()
   "If you have 2 windows, it swaps them."
   (interactive)

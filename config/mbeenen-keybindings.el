@@ -25,8 +25,6 @@
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
-
-
 ;; move more quickly
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
 (global-set-key (kbd "C-a") 'move-start-of-line-or-prev-line)
@@ -49,6 +47,9 @@
 
 ;; Get rid of bury buffer shortcut
 (global-set-key (kbd "<C-tab>") nil)
+
+;; Sudo commands
+(global-set-key (kbd "M-@") 'sudo-shell-command)
 
 ;; etags-select key bindings
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
