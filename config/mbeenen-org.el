@@ -10,18 +10,11 @@
             (make-variable-buffer-local 'yas/trigger-key)
             (org-set-local 'yas/trigger-key [tab])
             (define-key yas/keymap [tab] 'yas/next-field)
-            ;; flyspell mode for spell checking everywhere
-            ;; (flyspell-mode 1)
             ;; Undefine C-c [ and C-c ] since this breaks my org-agenda files when directories are include
             ;; It expands the files in the directories individually
             (org-defkey org-mode-map "\C-c["    'undefined)
             (org-defkey org-mode-map "\C-c]"    'undefined)))
 
-;; Org settings
-(setq org-agenda-files (list (concat org-dir "/organizer.org")
-                               (concat org-dir "/refile.org")
-                               (concat org-dir "/someday.org")))
-(setq org-default-notes-file (concat org-dir "/refile.org"))
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)
 
@@ -40,20 +33,14 @@
 
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file (concat org-dir "/refile.org"))
+      (quote (("t" "todo" entry (file org-default-notes-file)
                "* TODO %?\n  %i" )
-              ("T" "todo with file" entry (file (concat org-dir "/refile.org"))
+              ("T" "todo with file" entry (file org-default-notes-file)
                "* TODO %?\n%a\n  %i" )
-              ("n" "note" entry (file (concat org-dir "/refile.org"))
+              ("n" "note" entry (file org-default-notes-file)
                "* %? :NOTE:\n%U\n%a\n  %i" )
-              ("s" "someday" entry (file (concat org-dir "/refile.org"))
+              ("s" "someday" entry (file org-default-notes-file)
                "* SOMEDAY %?\n  %i" ))))
-
-;; mobile org
-(setq org-mobile-inbox-for-pull (concat org-dir "/refile.org"))
-(setq org-directory org-dir)
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
-
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d!/!)")
@@ -204,7 +191,6 @@ This does not support projects with subprojects"
                             (org-tags-match-list-sublevels 'indented)
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
-                            (org-agenda-files '("~/emacs/org/organizer.org"))
                             (org-agenda-sorting-strategy
                              '(category-keep))))
                 (todo "WAITING"
