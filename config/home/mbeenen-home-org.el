@@ -5,6 +5,7 @@
 (setq org-agenda-files (list (concat org-dir "/home.org")
                                (concat org-dir "/refile.org")
                                (concat org-dir "/emacs.org")))
+(setq org-refile-target-files org-agenda-files)
 (setq org-default-notes-file (concat org-dir "/refile.org"))
 (setq org-default-tasks-file (concat org-dir "/home.org"))
 

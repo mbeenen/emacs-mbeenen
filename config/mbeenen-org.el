@@ -58,9 +58,19 @@
               ("DONE" ("WAITING") ("CANCELLED")))))
 
 ;; ido related config
-; Targets include this file and any file contributing to the agenda - up to 2 levels deep
-(setq org-refile-targets (quote ((nil :maxlevel . 2)
-                                 (org-agenda-files :maxlevel . 2))))
+;; Refile settings
+;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-refile-target-files :maxlevel . 9))))
+
+;; Exclude TODO state tasks from refile targets (I typically don't nest TODO tasks)
+(defun bh/verify-refile-target ()
+  (let ((exclusion-keywords '("TODO" "CANCELLED" "DONE" "SOMEDAY" "STARTED" "WAITING")))
+    ;;(message "verifying %s\n" (org-heading-components))
+    ;;(message "todo keywords are %s" org-todo-keywords)
+    (not (member (nth 2 (org-heading-components)) exclusion-keywords))))
+
+(setq org-refile-target-verify-function 'bh/verify-refile-target)
 
 ; Stop using paths for refile targets - we file directly with IDO
 (setq org-refile-use-outline-path nil)
