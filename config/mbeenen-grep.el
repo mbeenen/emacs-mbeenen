@@ -7,6 +7,10 @@
                                            "*.m" "*.mi" "*.rb" "*.sql" "*.js" "*.css" "*.cfg")))
 (add-hook 'grep-mode-hook 'ansi-color-for-comint-mode-on)
 
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
+
+
 (setq grep-command "grep -srni ")
 (setq compilation-scroll-output t)
 
