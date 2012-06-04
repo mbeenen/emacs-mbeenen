@@ -40,4 +40,7 @@
 ;; from a common mode named prog-mode
 ;; (add-hook 'prog-mode-hook 'mbeenen-prog-mode-hook)
 
+;; Compilation related settings
+(setq compilation-ask-about-save nil)
+
 (provide 'mbeenen-programming)
