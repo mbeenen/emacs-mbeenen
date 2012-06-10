@@ -184,10 +184,6 @@ This does not support projects with subprojects"
                ((agenda "" nil)
                 (tags "REFILE"
                       ((org-agenda-overriding-header "Tasks to Refile")))
-                (tags-todo "-CANCELLED/!"
-                           ((org-agenda-overriding-header "Stuck Projects")
-                            (org-tags-match-list-sublevels 'indented)
-                            (org-agenda-skip-function 'bh/skip-non-stuck-projects)))
                 (tags-todo "-WAITING-CANCELLED/!NEXT|STARTED"
                            ((org-agenda-overriding-header "Next Tasks")
                             (org-agenda-skip-function 'bh/skip-projects)
@@ -206,7 +202,7 @@ This does not support projects with subprojects"
                 (todo "WAITING"
                       ((org-agenda-overriding-header "Waiting and Postponed tasks")
                        (org-agenda-skip-function 'bh/skip-projects)))
-                (tags "SOMEDAY"
+                (todo "SOMEDAY"
                       ((org-agenda-overriding-header "Project Wishlist")))
                 (tags "-REFILE/"
                       ((org-agenda-overriding-header "Tasks to Archive")
