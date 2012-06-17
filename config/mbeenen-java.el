@@ -89,6 +89,11 @@
 (add-hook 'java-mode-hook 'mbeenen-java-mode-setup)
 (add-hook 'java-mode-hook 'mbeenen-prog-mode-hook)
 
+;; Looking up javadoc
+(require 'javadoc-help)
+(javadoc-set-predefined-urls "http://docs.oracle.com/javase/6/docs/api")
+(define-key java-mode-map (kbd "C-c j") 'javadoc-lookup)
+
 ;; UTILITY FUNCTIONS - shortcuts for operations I find myself frequently performing
 
 (defun disable-unit-tests ()

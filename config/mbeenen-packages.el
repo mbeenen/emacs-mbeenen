@@ -4,7 +4,8 @@
 (package-initialize)
 
 (defvar mbeenen-packages
-  '(color-theme ctags dired-single etags-select etags-table paredit smex yasnippet zenburn-theme
+  '(color-theme ctags dired-single etags-select etags-table javadoc-help
+                paredit smex yasnippet zenburn-theme
                 )
   "A list of packages to ensure are installed at launch.")
 
