@@ -84,6 +84,8 @@
   ;; Font face customization
   (set-face-attribute c-annotation-face nil
                       :foreground "#8cd0d3")
+
+  (define-key java-mode-map (kbd "C-c j") 'javadoc-lookup)
   )
 
 (add-hook 'java-mode-hook 'mbeenen-java-mode-setup)
@@ -92,7 +94,7 @@
 ;; Looking up javadoc
 (require 'javadoc-help)
 (javadoc-set-predefined-urls "http://docs.oracle.com/javase/6/docs/api")
-(define-key java-mode-map (kbd "C-c j") 'javadoc-lookup)
+
 
 ;; UTILITY FUNCTIONS - shortcuts for operations I find myself frequently performing
 
