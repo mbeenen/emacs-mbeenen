@@ -19,7 +19,8 @@ Should be defined as a directory/buffer local variable within the project")
 
 (defun get-projectile-command (command)
   "Returns a string to be executed as the command executed from the project root"
-  (concat "cd " (projectile-get-project-root) "; " command))
+  (let ((final-command (substitute-project-variables command)))
+    (concat "cd " (projectile-get-project-root) "; " final-command)))
 
 (defun projectile-compile-project ()
   "Executes the test command for the project from the project root"
@@ -36,12 +37,22 @@ Should be defined as a directory/buffer local variable within the project")
   (interactive)
   (shell-command (get-projectile-command projectile-project-run-command)))
 
-(add-hook
- 'prog-mode-hook
- (lambda ()
-   ;; This doesn't quite seem to work yet, possibly the hook gets run before any
-   ;; directory local variables are set
-   (set (make-local-variable 'compile-command)
-        (get-projectile-command projectile-project-compile-command))))
+(defun substitute-project-variables (command)
+  "Replaces all the substitution patterns found in the command"
+  (let ((command-with-substitutions command))
+    ;; list of substitution variables
+    (setq command-with-substitutions
+          (replace-regexp-in-string "${fqcn}" (get-fully-qualified-classname) command-with-substitutions))
+    (setq command-with-substitutions
+          (replace-regexp-in-string "${buffer-name}" (buffer-file-name) command-with-substitutions))
+    ))
+
+;; (add-hook
+;;  'prog-mode-hook
+;;  (lambda ()
+;;    ;; This doesn't quite seem to work yet, possibly the hook gets run before any
+;;    ;; directory local variables are set
+;;    (set (make-local-variable 'compile-command)
+;;         (get-projectile-command projectile-project-compile-command))))
 
 (provide 'mbeenen-projectile)
