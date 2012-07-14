@@ -17,6 +17,7 @@
 
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)
+(setq org-startup-truncated nil)
 
 ;; Babel settings
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
