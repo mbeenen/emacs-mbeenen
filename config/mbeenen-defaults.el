@@ -87,7 +87,12 @@
 (require 'tramp)
 ;; keep in mind known issues with zsh - see emacs wiki
 (setq tramp-default-method "ssh")
-(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+(add-to-list 'tramp-default-proxies-alist
+             '(nil "\\`root\\'" "/ssh:%h:"))
+(add-to-list 'tramp-default-proxies-alist
+             '((regexp-quote (system-name)) nil nil))
+;; Root access on local host: /sudo::<path-to-root-owned-file>
+;; Root access on remote hosts: /sudo:root@remote-host:<path-to-root-owned-file>
 
 ;; auto-completion in minibuffer
 (icomplete-mode +1)
