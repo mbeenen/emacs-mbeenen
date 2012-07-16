@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : Unit test
+#key : uta
+# --
+@Test
+public void ${1:testName}() throws Exception {
+  private final String testName = "$1";
+  $0
+}

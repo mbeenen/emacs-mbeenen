@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : Unit test
+#key : ut
+# --
+@Test
+public void ${1:testName}() throws Exception {
+  private final String testName = "$1";
+  logger.info("BEGIN: " + testName);
+  $0  
+  try {
+
+  } finally {
+    logger.info("END: " + testName);
+  }
+}
