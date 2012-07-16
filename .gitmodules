@@ -22,3 +22,6 @@
 [submodule "site-lisp/js2-mode"]
 	path = site-lisp/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "site-lisp/multi-web-mode"]
+	path = site-lisp/multi-web-mode
+	url = git://github.com/fgallina/multi-web-mode.git
