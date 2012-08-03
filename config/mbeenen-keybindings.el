@@ -21,6 +21,7 @@
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
+(define-key mbeenen-custom-map (kbd "SPC") 'just-one-space)
 
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
