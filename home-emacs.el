@@ -8,7 +8,6 @@
 ;; everything else
 (require 'mbeenen-home-org)
 (require 'mbeenen-home-startup)
-(require 'mbeenen-home-color-theme)
 (require 'mbeenen-emacs-24-specific)
 
 ;; Desktop loading goes last
