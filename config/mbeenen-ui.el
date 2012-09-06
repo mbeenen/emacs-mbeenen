@@ -31,4 +31,7 @@
 (column-number-mode t)
 (size-indication-mode t)
 
+;; cursor settings
+(set-cursor-color "grey60")
+
 (provide 'mbeenen-ui)
