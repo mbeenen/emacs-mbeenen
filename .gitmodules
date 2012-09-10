@@ -25,3 +25,6 @@
 [submodule "site-lisp/nxhtml"]
 	path = site-lisp/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "site-lisp/ajc-java-complete"]
+	path = site-lisp/ajc-java-complete
+	url = git://github.com/jixiuf/ajc-java-complete.git
