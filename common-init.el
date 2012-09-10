@@ -37,6 +37,7 @@
 (require 'mbeenen-keyboard-macros)
 (require 'mbeenen-magit)
 (require 'mbeenen-midnight)
+(require 'mbeenen-nxhtml)
 (require 'mbeenen-programming)
 (require 'mbeenen-projectile)
 (require 'mbeenen-shell)
