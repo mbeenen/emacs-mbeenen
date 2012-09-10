@@ -26,6 +26,7 @@
 
 ;; Load the main modules
 (require 'mbeenen-packages)
+(require 'mbeenen-auto-complete)
 (require 'mbeenen-color-theme)
 (require 'mbeenen-css)
 (require 'mbeenen-dired)
