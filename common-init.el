@@ -64,6 +64,7 @@
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-java)
 (require 'mbeenen-javascript)
+(require 'mbeenen-mason)
 (require 'mbeenen-org)
 (require 'mbeenen-perl)
 
