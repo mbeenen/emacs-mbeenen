@@ -117,11 +117,12 @@
 (defun get-fully-qualified-classname ()
   "Returns the fqcn of the current buffer (probably only meaningful in Java)"
   (interactive)
-  (replace-regexp-in-string
-   "/" "."
-   (replace-regexp-in-string
-    (replace-regexp-in-string
-     "~" (getenv "HOME") (projectile-get-project-root)) ""
-     (file-name-sans-extension buffer-file-name))))
+  (if (buffer-file-name)
+      (replace-regexp-in-string
+       "/" "."
+       (replace-regexp-in-string
+        (replace-regexp-in-string
+         "~" (getenv "HOME") (projectile-get-project-root)) ""
+         (file-name-sans-extension buffer-file-name)))))
 
 (provide 'mbeenen-java)
