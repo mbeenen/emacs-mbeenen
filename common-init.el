@@ -38,6 +38,7 @@
 (require 'mbeenen-keyboard-macros)
 (require 'mbeenen-magit)
 (require 'mbeenen-midnight)
+(require 'mbeenen-mmm)
 (require 'mbeenen-nxhtml)
 (require 'mbeenen-programming)
 (require 'mbeenen-projectile)
