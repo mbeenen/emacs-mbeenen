@@ -7,7 +7,7 @@
 
 (defvar mbeenen-packages
   '(auto-complete color-theme ctags dired-single etags-select etags-table javadoc-help mmm-mode
-                paredit smex yasnippet zenburn-theme
+                paredit scss-mode smex yasnippet zenburn-theme
                 )
   "A list of packages to ensure are installed at launch.")
 
