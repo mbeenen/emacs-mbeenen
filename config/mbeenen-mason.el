@@ -28,7 +28,7 @@
 (mmm-add-mode-ext-class 'css-mode "\\.css\\.m\\'"  'mason)
 (mmm-add-mode-ext-class 'css-mode "\\.css\\.mi\\'"  'mason)
 
-;; (add-hook 'html-mode-hook 'mbeenen-prog-mode-hook)
+(add-hook 'html-mode-hook 'mbeenen-prog-mode-hook)
 
 
 (provide 'mbeenen-mason)

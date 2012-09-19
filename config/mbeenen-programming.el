@@ -33,6 +33,7 @@
   (prelude-local-comment-auto-fill)
   (prelude-turn-on-whitespace)
   (prelude-add-watchwords)
+  (auto-complete-mode t)
   ;; keep the whitespace decent all the time
   (add-hook 'before-save-hook 'whitespace-cleanup nil t))
 
