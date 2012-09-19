@@ -1,8 +1,9 @@
-Expects the following extensions to be installed in ~/.emacs.d/:
+My emacs settings.
 
-etags-select
-etags-table
-nxhtml
-paredit
-smex
-yasnippet
+Should pretty much work out of the box with the following code in .emacs:
+
+(add-to-list 'load-path "/path/to/emacs-mbeenen")
+(load-file "/path/to/emacs-mbeenen/home-emacs.el")
+
+Currently works with Emacs 24
+
