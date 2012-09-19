@@ -55,7 +55,7 @@
 (setq-default transient-mark-mode t)
 
 ;; smart indenting and pairing for all
-(electric-pair-mode t)
+(electric-pair-mode nil)
 (electric-indent-mode t)
 (electric-layout-mode t)
 
