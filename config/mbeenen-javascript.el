@@ -3,4 +3,5 @@
 
 (add-hook 'js2-mode-hook 'mbeenen-prog-mode-hook)
 (add-hook 'js-mode-hook 'mbeenen-prog-mode-hook)
+
 (provide 'mbeenen-javascript)
