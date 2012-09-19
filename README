@@ -1,9 +1,13 @@
 My emacs settings.
 
+Make sure to run `git submodule init` and `git submodule update` to get the latest version of the submodules under site-lisp
+
 Should pretty much work out of the box with the following code in .emacs:
 
 (add-to-list 'load-path "/path/to/emacs-mbeenen")
 (load-file "/path/to/emacs-mbeenen/home-emacs.el")
 
 Currently works with Emacs 24
+
+
 
