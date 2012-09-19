@@ -14,6 +14,7 @@
  '(c-annotation-face ((t (:foreground "#8cd0d3"))) t)
  '(cperl-array-face ((t (:foreground "#f0dfaf" :weight bold))))
  '(cperl-hash-face ((t (:foreground "#f0dfaf" :slant italic :weight bold))))
- '(mumamo-background-chunk-major ((t (:background "#3f3f3f"))))
- '(mumamo-background-chunk-submode1 ((t (:background "#4f4f4f")))))
+ '(mmm-default-submode-face ((t (:background "#4f4f4f"))))
+ '(mumamo-background-chunk-major ((t (:background "#3f3f3f"))) t)
+ '(mumamo-background-chunk-submode1 ((t (:background "#4f4f4f"))) t))
 

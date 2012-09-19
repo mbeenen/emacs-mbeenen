@@ -39,7 +39,6 @@
 (require 'mbeenen-magit)
 (require 'mbeenen-midnight)
 (require 'mbeenen-mmm)
-(require 'mbeenen-nxhtml)
 (require 'mbeenen-programming)
 (require 'mbeenen-projectile)
 (require 'mbeenen-shell)

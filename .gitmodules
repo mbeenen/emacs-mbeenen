@@ -22,9 +22,6 @@
 [submodule "site-lisp/js2-mode"]
 	path = site-lisp/js2-mode
 	url = https://github.com/mooz/js2-mode.git
-[submodule "site-lisp/nxhtml"]
-	path = site-lisp/nxhtml
-	url = git://github.com/emacsmirror/nxhtml.git
 [submodule "site-lisp/ajc-java-complete"]
 	path = site-lisp/ajc-java-complete
 	url = git://github.com/jixiuf/ajc-java-complete.git
