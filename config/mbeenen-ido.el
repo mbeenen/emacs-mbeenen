@@ -145,6 +145,10 @@ name for the two files, moving up the directory tree step by step."
                ("shell" (mode . shell-mode))
                ("dired" (mode . dired-mode))
                ("mason" (name . "\\.mi?\\|^dhandler\\|^autohandler\\|^html"))
+               ("javascript" (mode . js-mode))
+               ("css" (or
+                       (mode . css-mode)
+                       (mode . scss-mode)))
                ("java" (mode . java-mode))
                ("config" (mode . conf-unix-mode))
                ("xml" (mode . nxml-mode))
@@ -158,6 +162,7 @@ name for the two files, moving up the directory tree step by step."
                ("perl" (or
                         (mode . cperl-mode)
                         (mode . perl-mode)))
+               ("shell-script" (mode . sh-mode))
                ("tags" (mode . tags-table-mode))
                ("erc" (mode . erc-mode))
                ("tramp" (name . "^\\*tramp"))
