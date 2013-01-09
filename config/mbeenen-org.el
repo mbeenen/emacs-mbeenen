@@ -1,4 +1,4 @@
-(require 'org)
+(require 'org-install)
 
 ;; Don't know why emacs complains that org-mode-map is undefined otherwise
 (define-prefix-command 'org-mode-map)
