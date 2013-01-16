@@ -5,7 +5,7 @@
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
-
+(setq auto-revert-verbose nil)
 ;; Also auto refresh dired
 (setq global-auto-revert-non-file-buffers t)
 
