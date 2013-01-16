@@ -30,6 +30,10 @@
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
 (global-set-key (kbd "C-a") 'move-start-of-line-or-prev-line)
 
+;; newline editing
+(global-set-key (kbd "<C-return>") 'new-line-below)
+(global-set-key (kbd "<C-S-return>") 'new-line-above)
+
 ;; Delete region (don't put it in the kill-ring)
 (global-set-key (kbd "C-c C-w") 'delete-region)
 
