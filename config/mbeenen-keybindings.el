@@ -114,4 +114,7 @@
 (global-set-key (kbd "C->") 'mark-next-like-this)
 (global-set-key (kbd "C-M-m") 'mark-more-like-this)
 
+;; yasnippet
+(global-set-key (kbd "<C-tab>") 'yas/expand)
+
 (provide 'mbeenen-keybindings)
