@@ -33,6 +33,8 @@
 ;; newline editing
 (global-set-key (kbd "<C-return>") 'new-line-below)
 (global-set-key (kbd "<C-S-return>") 'new-line-above)
+(global-set-key [(control shift up)] 'prelude-move-line-up)
+(global-set-key [(control shift down)] 'prelude-move-line-down)
 
 ;; Delete region (don't put it in the kill-ring)
 (global-set-key (kbd "C-c C-w") 'delete-region)
