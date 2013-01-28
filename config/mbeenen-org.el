@@ -1,15 +1,7 @@
-(require 'org-install)
-
-;; Don't know why emacs complains that org-mode-map is undefined otherwise
-(define-prefix-command 'org-mode-map)
-
+(require 'org)
 ;; General settings for any org file
 (add-hook 'org-mode-hook
           (lambda ()
-            ;; yasnippet
-            (make-variable-buffer-local 'yas/trigger-key)
-            (org-set-local 'yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field)
             ;; Undefine C-c [ and C-c ] since this breaks my org-agenda files when directories are include
             ;; It expands the files in the directories individually
             (org-defkey org-mode-map "\C-c["    'undefined)
@@ -18,19 +10,6 @@
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)
 (setq org-startup-truncated nil)
-
-;; Babel settings
-(add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
-
-(org-babel-do-load-languages
- (quote org-babel-load-languages)
- (quote ((emacs-lisp . t)
-         (dot . t)
-         (gnuplot . t)
-         (clojure . t)
-         (sh . t)
-         (org . t)
-         (latex . t))))
 
 ;; Capture templates for: TODO tasks, Notes
 (setq org-capture-templates
@@ -211,3 +190,4 @@ This does not support projects with subprojects"
                nil))))
 
 (provide 'mbeenen-org)
+ 
