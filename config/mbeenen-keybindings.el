@@ -20,8 +20,8 @@
 (define-key mbeenen-custom-map (kbd "C-p") 'grep-o-matic-current-directory)
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
-(define-key mbeenen-custom-map (kbd "e") 'mbeenen-erc-start-or-switch)
 (define-key mbeenen-custom-map (kbd "SPC") 'just-one-space)
+(define-key mbeenen-custom-map (kbd "y") 'yas-insert-snippet)
 
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
@@ -107,6 +107,9 @@
 ;; expand-region
 (global-set-key (kbd "C-@") 'er/expand-region)
 
+;; yasnippet
+(global-set-key [C-tab] 'yas-expand)
+
 ;;Ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
@@ -120,3 +123,5 @@
 (global-set-key (kbd "<C-tab>") 'yas/expand)
 
 (provide 'mbeenen-keybindings)
+
+
