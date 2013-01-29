@@ -41,6 +41,7 @@
 (require 'mbeenen-mmm)
 (require 'mbeenen-programming)
 (require 'mbeenen-projectile)
+(require 'mbeenen-ruby)
 (require 'mbeenen-shell)
 (require 'mbeenen-tags)
 (require 'mbeenen-ui)
