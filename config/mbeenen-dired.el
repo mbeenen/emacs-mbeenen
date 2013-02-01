@@ -11,12 +11,23 @@
 (add-hook 'dired-load-hook
           (function (lambda () (load "dired-x"))))
 
-(defun dired-back-to-start-of-files ()
+(defun dired-back-to-top ()
   (interactive)
-  (backward-char (- (current-column) 2)))
+  (beginning-of-buffer)
+  (next-line 2))
+
+(define-key dired-mode-map
+  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+
+(defun dired-jump-to-bottom ()
+  (interactive)
+  (end-of-buffer)
+  (next-line -1))
+
+(define-key dired-mode-map
+  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
 
 (defun dired-mode-keybindings ()
-  (define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
   (define-key dired-mode-map (kbd "C-c f") 'dired-mark-files-regexp)
   (define-key dired-mode-map (kbd "C-c g") 'dired-mark-files-containing-regexp)
   (define-key dired-mode-map (kbd "C-c q") 'dired-do-query-replace-regexp))
