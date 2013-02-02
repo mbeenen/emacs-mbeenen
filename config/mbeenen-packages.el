@@ -7,9 +7,25 @@
 (package-initialize)
 
 (defvar mbeenen-packages
-  '(auto-complete color-theme ctags dash dired-single etags-select etags-table javadoc-help mmm-mode
-                paredit rvm s scss-mode smex yasnippet zenburn-theme
-                )
+  '(
+    auto-complete
+    color-theme
+    ctags
+    dash
+    dired-single
+    etags-select
+    etags-table
+    ido-ubiquitous
+    javadoc-help
+    mmm-mode
+    paredit
+    rvm
+    s
+    scss-mode
+    smex
+    yasnippet
+    zenburn-theme
+    )
   "A list of packages to ensure are installed at launch.")
 
 (defun mbeenen-packages-installed-p ()

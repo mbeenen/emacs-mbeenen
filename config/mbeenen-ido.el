@@ -2,6 +2,10 @@
 (require 'ido)
 (require 'recentf)
 
+;; Use ido everywhere
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
+
 ;; ido settings
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
