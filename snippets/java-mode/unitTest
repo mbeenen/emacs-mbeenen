@@ -4,7 +4,7 @@
 # --
 @Test
 public void ${1:testName}() throws Exception {
-  final String testName = "$1";
+  final String testName = testNameObj.getMethodName();
   logger.info("BEGIN: " + testName);
   $0  
   try {
