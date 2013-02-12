@@ -107,9 +107,6 @@
 ;; expand-region
 (global-set-key (kbd "C-@") 'er/expand-region)
 
-;; yasnippet
-(global-set-key [C-tab] 'yas-expand)
-
 ;;Ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
