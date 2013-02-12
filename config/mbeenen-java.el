@@ -74,7 +74,7 @@
 (defun mbeenen-java-mode-setup ()
   (interactive)
   ;; Minor modes
-  (c-toggle-auto-newline 1)
+  (c-toggle-auto-newline nil)
   (setq c-hungry-delete-key t)
 
   (c-set-style "PERSONAL")
