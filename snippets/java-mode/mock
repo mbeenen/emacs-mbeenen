@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: mock
+# key: mock
+# --
+@Mock private ${1:Class} ${2:name};
+

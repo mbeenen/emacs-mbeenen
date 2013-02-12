@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logger
+# key: logger
+# --
+private static Logger logger = Logger.getLogger(`(file-name-sans-extension (uniquify-buffer-base-name))`.class);
+$0
