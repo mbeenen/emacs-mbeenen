@@ -17,6 +17,7 @@
     etags-table
     ido-ubiquitous
     javadoc-help
+    js-comint
     mmm-mode
     paredit
     rvm
