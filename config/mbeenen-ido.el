@@ -1,6 +1,5 @@
 ;; Interactively do things
 (require 'ido)
-(require 'ido-ubiquitous)
 (require 'recentf)
 
 ;; ido settings
@@ -8,9 +7,6 @@
 (setq ido-everywhere t)
 (setq ido-max-directory-size 100000)
 (ido-mode 1)
-
-;; Use ido everywhere
-(ido-ubiquitous-mode 1)
 
 ;; Ido minibuffer keybindings
 (defun mbeenen-ido-minibuffer-setup ()
