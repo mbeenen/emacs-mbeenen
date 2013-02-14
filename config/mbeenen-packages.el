@@ -18,6 +18,7 @@
     ido-ubiquitous
     javadoc-help
     js-comint
+    js2-mode
     mmm-mode
     paredit
     rvm
