@@ -25,6 +25,7 @@
 
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-x F") 'djcb-find-file-as-root)
 
 ;; move more quickly
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
@@ -35,6 +36,11 @@
 (global-set-key (kbd "<C-S-return>") 'new-line-above)
 (global-set-key [(control shift up)] 'prelude-move-line-up)
 (global-set-key [(control shift down)] 'prelude-move-line-down)
+;; join line
+(global-set-key (kbd "M-j")
+                (lambda ()
+                  (interactive)
+                  (join-line -1)))
 
 ;; Delete region (don't put it in the kill-ring)
 (global-set-key (kbd "C-c C-w") 'delete-region)
@@ -115,6 +121,9 @@
 (global-set-key (kbd "C-<") 'mark-previous-like-this)
 (global-set-key (kbd "C->") 'mark-next-like-this)
 (global-set-key (kbd "C-M-m") 'mark-more-like-this)
+
+;; isearch keybindings
+(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
 ;; yasnippet
 (global-set-key (kbd "<C-tab>") 'yas/expand)

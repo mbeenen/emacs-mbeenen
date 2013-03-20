@@ -98,4 +98,6 @@
 ;; auto-completion in minibuffer
 (icomplete-mode +1)
 
+(winner-mode t)
+
 (provide 'mbeenen-defaults)
