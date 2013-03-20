@@ -1,10 +1,8 @@
 # -*- coding: utf-8; mode: snippet -*-
-# name: Jasmine describe
-# key: desc
-# group: Jasmine
+# name: attr: function
+# key: anfun
 # contributor: David Miller <david@deadpansincerity.com>
 # --
-
-describe('${1:Spec}', function (){
+function (${3:args}) {
     $0
-});
+}
