@@ -13,8 +13,6 @@
 (require 'mbeenen-work-logs)
 (require 'mbeenen-work-org)
 (require 'mbeenen-work-keybindings)
-;; (require 'mbeenen-work-mason)
-;; (require 'mbeenen-mumamo)
 
 ;; Load desktop last
 (require 'mbeenen-desktop)
