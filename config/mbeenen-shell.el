@@ -37,4 +37,9 @@
             (define-key shell-mode-map
               (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
 
+(defun shell-clear ()
+  (interactive)
+  (erase-buffer)
+  (comint-send-input))
+
 (provide 'mbeenen-shell)
