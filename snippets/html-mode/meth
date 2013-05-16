@@ -3,10 +3,13 @@
 #key : meth
 # --
 <%method ${1:methodName}>
-${2:<%args>
+<%doc>
+${2:TODO: Add documentation}
+</%doc>
+${3:<%args>
   
 </%args>
-}<%perl>
+}<%init>
   $0
-</%perl>
+</%init>
 </%method>

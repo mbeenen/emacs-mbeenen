@@ -1,15 +1,15 @@
 # -*- mode: snippet -*-
-#name : def
-#key : def
+#name : methp
+#key : methp
 # --
-<%def ${1:defName}>
+<%method ${1:methodName}>
 <%doc>
 ${2:TODO: Add documentation}
 </%doc>
 ${3:<%args>
   
 </%args>
-}<%init>
+}<%perl>
   $0
-</%init>
-</%def>
+</%perl>
+</%method>

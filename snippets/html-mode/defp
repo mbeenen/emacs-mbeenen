@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-#name : def
-#key : def
+#name : defp
+#key : defp
 # --
 <%def ${1:defName}>
 <%doc>
@@ -9,7 +9,7 @@ ${2:TODO: Add documentation}
 ${3:<%args>
   
 </%args>
-}<%init>
+}<%perl>
   $0
-</%init>
+</%perl>
 </%def>
