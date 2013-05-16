@@ -5,6 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(enable-local-variables :all)
+ '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
