@@ -25,3 +25,6 @@
 [submodule "site-lisp/ajc-java-complete"]
 	path = site-lisp/ajc-java-complete
 	url = git://github.com/jixiuf/ajc-java-complete.git
+[submodule "site-lisp/mmm-mode"]
+	path = site-lisp/mmm-mode
+	url = git@github.com:mbeenen/mmm-mode.git
