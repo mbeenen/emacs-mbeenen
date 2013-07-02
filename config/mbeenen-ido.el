@@ -145,7 +145,9 @@ name for the two files, moving up the directory tree step by step."
                ("shell" (mode . shell-mode))
                ("dired" (mode . dired-mode))
                ("mason" (name . "\\.mi?\\|^dhandler\\|^autohandler\\|^html"))
-               ("javascript" (mode . js-mode))
+               ("javascript" (or
+                              (mode . js-mode)
+                              (mode . js2-mode)))
                ("css" (or
                        (mode . css-mode)
                        (mode . scss-mode)))
