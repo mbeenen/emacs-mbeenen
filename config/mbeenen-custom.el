@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(enable-local-variables :all)
  '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
- '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi %s %s")
+ '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler %s %s")
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
