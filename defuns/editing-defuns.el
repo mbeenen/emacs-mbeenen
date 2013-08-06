@@ -253,3 +253,17 @@ region-end is used. Adds the duplicated text to the kill ring."
       (set-window-start w1 s2)
       (set-window-start w2 s1)))
   (other-window 1))
+
+(defun url-decode-region (start end)
+  "Replace a region with the same contents, only URL decoded."
+  (interactive "r")
+  (let ((text (url-unhex-string (buffer-substring start end))))
+    (delete-region start end)
+    (insert text)))
+
+(defun url-encode-region (start end)
+  "Replace a region with the same contents, only URL decoded."
+  (interactive "r")
+  (let ((text (url-hexify-string (buffer-substring start end))))
+    (delete-region start end)
+    (insert text)))
