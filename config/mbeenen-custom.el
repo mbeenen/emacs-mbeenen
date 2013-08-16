@@ -4,6 +4,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cperl-continued-statement-offset 4)
+ '(cperl-indent-parens-as-block t)
  '(enable-local-variables :all)
  '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
  '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler %s %s")
