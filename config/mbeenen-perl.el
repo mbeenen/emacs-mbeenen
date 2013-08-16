@@ -8,7 +8,7 @@
                     :foreground "#f0dfaf")
 (set-face-attribute 'cperl-hash-face nil
                     :foreground "#f0dfaf")
-(defalias 'perl-mode 'cperl-mode)
+(defalias 'cperl-mode 'perl-mode)
 (add-hook 'cperl-mode-hook 'mbeenen-prog-mode-hook)
 
 (provide 'mbeenen-perl)
