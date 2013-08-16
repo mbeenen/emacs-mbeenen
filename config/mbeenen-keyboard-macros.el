@@ -6,6 +6,6 @@
 (fset 'unwind-bsf
    [?\C-\M-s ?: ?\\ ?| ?\{ ?\\ ?| ?\} ?\C-m return])
 (fset 'unwind-timing-log
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([19 44 13 return] 0 "%d")) arg)))
+   [?\C-s ?, ?\C-m ?\C-r ?: ?\C-m ?\C-f ?  ?\C-s ?/ ?\C-m ?\C-b ?  ?\C-f ?  ?\C-s ?, ?\C-m return])
 
 (provide 'mbeenen-keyboard-macros)
