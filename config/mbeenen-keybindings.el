@@ -128,9 +128,6 @@
 ;; yasnippet
 (global-set-key (kbd "<C-tab>") 'yas/expand)
 
-;; shell shortcuts
-(define-key shell-mode-map (kbd "C-c e") 'shell-clear)
-
 (provide 'mbeenen-keybindings)
 
 
