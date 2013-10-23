@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : ckpt
+#key : ckpt
+# --
+print "MBEENEN CHECKPOINT: ${1:checkpointName}<br>";

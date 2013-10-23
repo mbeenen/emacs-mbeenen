@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : weblab
+#key : weblab
+# --
+PI::WebLab::Service->getTreatmentRecordTrigger("${1:weblabName}")

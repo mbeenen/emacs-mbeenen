@@ -1,0 +1,6 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: logo
+# key: logo
+# --
+console.log('${1:variable} is ');
+console.log($1);
