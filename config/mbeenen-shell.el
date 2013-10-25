@@ -22,9 +22,11 @@
 
 ;; function to start a shell in a given dir, and rename the shell
 (defun init-shell (starting-dir name)
+  (switch-to-buffer "*scratch*")
   (cd starting-dir)
   (shell)
-  (rename-buffer name))
+  (rename-buffer name)
+  (bury-buffer "*scratch*"))
 
 (defun comint-delchar-or-eof-or-kill-buffer (arg)
   (interactive "p")
