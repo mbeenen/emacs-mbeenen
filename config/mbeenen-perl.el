@@ -9,6 +9,7 @@
 (set-face-attribute 'cperl-hash-face nil
                     :foreground "#f0dfaf")
 (add-hook 'cperl-mode-hook 'mbeenen-prog-mode-hook)
+(add-hook 'cperl-mode-hook 'prelude-turn-on-whitespace)
 (add-to-list 'auto-mode-alist '(".pm$" . cperl-mode))
 (add-to-list 'auto-mode-alist '(".t$" . cperl-mode))
 
