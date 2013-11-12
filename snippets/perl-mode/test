@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : test
+#key : test
+# --
+use strict;
+use warnings;
+use Test::More;
+$0

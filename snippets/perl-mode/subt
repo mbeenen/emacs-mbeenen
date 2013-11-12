@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : subtest
+#key : subt
+# --
+subtest '${1: test name}' => sub {
+    $0
+};

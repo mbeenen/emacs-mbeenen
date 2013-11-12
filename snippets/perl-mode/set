@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : setter
+#key : set
+# --
+sub set${1:$(upcase-initials text)} {
+    my ($self, ${1:name}) = @_;
+    $self->{$1} = $$1;
+}
+
+$0

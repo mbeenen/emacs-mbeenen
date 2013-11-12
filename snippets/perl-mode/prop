@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+#name : property
+#key : prop
+# --
+=head2 get${1:$(upcase-initials text)}
+
+${2:getterDescription}
+
+=cut
+
+sub get${1:$(upcase-initials text)} {
+    my $self = shift;
+    return $self->{${1:name}};
+}
+
+=head2 set${1:$(upcase-initials text)}($1)
+
+${3:setterDescription}
+
+=cut
+
+sub set${1:$(upcase-initials text)} {
+    my ($self, $$1) = @_;
+    $self->{$1} = $$1;
+}
+
+$0

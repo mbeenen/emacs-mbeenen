@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : getter
+#key : get
+# --
+sub get${1:$(upcase-initials text)} {
+    my $self = shift;
+    return $self->{${1:name}};
+}
+
+$0

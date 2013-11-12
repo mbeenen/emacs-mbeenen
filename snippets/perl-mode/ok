@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : ok
+#key : ok
+# --
+is(${1:test}, '${2:testName}');
+$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : done testing
+#key : dt
+# --
+done_testing();

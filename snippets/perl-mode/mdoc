@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : method doc
+#key : mdoc
+# --
+=head2 ${1:methodName}
+
+${2:methodDescription}
+
+=cut
+
+$0

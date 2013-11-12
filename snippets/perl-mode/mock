@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : mock object
+#key : mock
+# --
+my $${1:mockName} = Test::MockObject->new();
+$0
