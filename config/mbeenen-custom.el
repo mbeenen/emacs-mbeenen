@@ -11,7 +11,7 @@
  '(mmm-major-mode-preferences (quote ((perl perl-mode) (python python-mode python-mode) (javascript javascript-mode c++-mode) (java jde-mode java-mode c++-mode) (css css-mode c++-mode))))
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
- '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler %s %s")
+ '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl %s %s")
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
