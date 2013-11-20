@@ -2,6 +2,12 @@
 #name : sub
 #key : sub
 # --
-sub ${1:name} {
+=head2 ${1:methodName}${2:methodArgs}
+
+${3:methodDescription}
+
+=cut
+
+sub $1 {
     $0
 }

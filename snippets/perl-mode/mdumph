@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-#name : dumph
-#key : dumph
+#name : mdumph
+#key : mdumph
 # --
 print '%${1:variableName} is: <pre>'.Data::Dumper::Dumper(%$1).'</pre><br>';

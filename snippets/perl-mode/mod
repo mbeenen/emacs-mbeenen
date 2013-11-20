@@ -2,7 +2,15 @@
 #name : module
 #key : mod
 # --
+=head1 NAME
+
+${1:moduleName} - ${2:moduleShortDescription}
+
+=cut
+
 package ${1:moduleName};
 use strict;
 use warnings;
 $0
+
+1;

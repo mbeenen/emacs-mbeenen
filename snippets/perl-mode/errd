@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : errd
+#key : errd
+# --
+print STDERR "\n".'${1:variableName} is ' . (defined($1) ? $1 : "undef") . "\n";
