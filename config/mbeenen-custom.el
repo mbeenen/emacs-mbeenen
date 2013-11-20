@@ -4,8 +4,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cperl-continued-statement-offset 4)
- '(cperl-indent-parens-as-block t)
  '(enable-local-variables :all)
  '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
  '(mmm-major-mode-preferences (quote ((perl perl-mode) (python python-mode python-mode) (javascript javascript-mode c++-mode) (java jde-mode java-mode c++-mode) (css css-mode c++-mode))))

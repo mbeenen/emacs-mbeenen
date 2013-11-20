@@ -2,6 +2,8 @@
 ;; Indentation rules
 (setq cperl-indent-parens-as-block t)
 (setq cperl-indent-level 4)
+(setq cperl-continued-statement-offset 4)
+(setq cperl-close-paren-offset -4)
 (setq perl-indent-level 4)
 
 (set-face-attribute 'cperl-array-face nil
