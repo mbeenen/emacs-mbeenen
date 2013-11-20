@@ -1,24 +1,6 @@
-[submodule "site-lisp/ace-jump-mode"]
-        path = site-lisp/ace-jump-mode
-        url = https://github.com/winterTTr/ace-jump-mode.git
 [submodule "site-lisp/recall-position"]
         path = site-lisp/recall-position
         url = https://github.com/cjohansen/recall-position.el.git
-[submodule "site-lisp/expand-region"]
-        path = site-lisp/expand-region
-        url = https://github.com/magnars/expand-region.el.git
-[submodule "site-lisp/mark-multiple"]
-        path = site-lisp/mark-multiple
-        url = https://github.com/magnars/mark-multiple.el.git
-[submodule "site-lisp/projectile"]
-	path = site-lisp/projectile
-	url = git://github.com/bbatsov/projectile.git
-[submodule "site-lisp/magithub"]
-	path = site-lisp/magithub
-	url = https://github.com/nex3/magithub.git
-[submodule "site-lisp/js2-mode"]
-	path = site-lisp/js2-mode
-	url = https://github.com/mooz/js2-mode.git
 [submodule "site-lisp/ajc-java-complete"]
 	path = site-lisp/ajc-java-complete
 	url = git://github.com/jixiuf/ajc-java-complete.git

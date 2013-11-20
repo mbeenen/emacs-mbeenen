@@ -8,18 +8,28 @@
 
 (defvar mbeenen-packages
   '(
+    ace-jump-mode
     auto-complete
     color-theme
     ctags
     dash
+    dired-details
+    dired-details+
     dired-single
     etags-select
     etags-table
+    expand-region
+    grep-a-lot
+    grep-o-matic
     ido-ubiquitous
     javadoc-help
     js-comint
     js2-mode
+    magit
+    mark-multiple
     paredit
+    projectile
+    repository-root
     rvm
     s
     scss-mode
