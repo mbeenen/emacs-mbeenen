@@ -4,7 +4,7 @@
 # --
 =head1 NAME
 
-${1:moduleName} - ${2:moduleShortDescription}
+$1 - ${2:moduleShortDescription}
 
 =cut
 

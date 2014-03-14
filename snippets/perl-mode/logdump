@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : logdump
+#key : logdump
+# --
+FLLog::FLLogError('MBEENEN: ${1:variableName} is: '.Data::Dumper::Dumper($1));

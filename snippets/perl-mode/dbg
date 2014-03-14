@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : dbg
+#key : dbg
+# --
+print STDERR "\n${1:message}\n";

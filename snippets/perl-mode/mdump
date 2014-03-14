@@ -2,4 +2,4 @@
 #name : mdump
 #key : mdump
 # --
-print '$${1:variableName} is: <pre>'.Data::Dumper::Dumper($$1).'</pre><br>';
+print '${1:variableName} is: <pre>'.Data::Dumper::Dumper($1).'</pre><br>';
