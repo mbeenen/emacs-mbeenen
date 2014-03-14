@@ -21,7 +21,6 @@
     etags-table
     expand-region
     grep-a-lot
-    grep-o-matic
     ido-ubiquitous
     javadoc-help
     js-comint
