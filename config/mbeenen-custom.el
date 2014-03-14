@@ -10,13 +10,15 @@
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
  '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl %s %s")
+ '(repository-root-exhaustive-scan t)
+ '(repository-root-force-scan nil)
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-annotation-face ((t (:foreground "#8cd0d3"))))
+ '(c-annotation-face ((t (:foreground "#8cd0d3"))) t)
  '(cperl-array-face ((t (:foreground "#f0dfaf" :weight bold))))
  '(cperl-hash-face ((t (:foreground "#f0dfaf" :slant italic :weight bold))))
  '(mmm-default-submode-face ((t (:background "#4f4f4f"))))
