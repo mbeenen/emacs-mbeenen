@@ -1,4 +1,5 @@
 ;; Make dired less verbose
+(require 'color-moccur)
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- ")
 

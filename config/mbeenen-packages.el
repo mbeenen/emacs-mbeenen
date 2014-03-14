@@ -10,6 +10,7 @@
   '(
     ace-jump-mode
     auto-complete
+    color-moccur
     color-theme
     ctags
     dash
