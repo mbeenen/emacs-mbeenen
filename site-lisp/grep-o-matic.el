@@ -95,7 +95,7 @@ more details."
   :group 'grep-o-matic
   :type 'string)
 
-(defun grep-o-matic-repository-root (filename)
+(defun grep-o-matic-repository-root (filename &optional use-highest-root)
   "Attempt to deduce the current file's repository root directory."
   (if (null filename)
       default-directory
@@ -108,7 +108,9 @@ more details."
 	   (rr_rootdir (if (featurep 'repository-root)
 			   (repository-root filename)
 			 nil)))
-      (or rr_rootdir vc_rootdir directory))))
+      (if use-highest-root
+          (or rr_rootdir vc_rootdir directory)
+        (or vc_rootdir rr_rootdir directory)))))
 
 (defun grep-o-matic-get-regexp (prompt)
   "Get the default regexp or query the user for it."
@@ -183,7 +185,20 @@ Optionaly prompt for regexp to search."
   "Search repository for word at point.
 Optionaly prompt for regexp to search."
   (interactive "P")
-  (let ((repository-root (grep-o-matic-repository-root buffer-file-name)))
+  (let ((repository-root (grep-o-matic-repository-root buffer-file-name nil)))
+    (if (and grep-o-matic-use-git-grep
+	     (string-equal "git"
+			   (downcase (symbol-name (vc-backend
+						   buffer-file-name)))))
+	(grep-o-matic-git-repository prompt repository-root)
+      (grep-o-matic-directory prompt repository-root))))
+
+;;;###autoload
+(defun grep-o-matic-parent-repository (&optional prompt)
+  "Search repository for word at point.
+Optionaly prompt for regexp to search."
+  (interactive "P")
+  (let ((repository-root (grep-o-matic-repository-root buffer-file-name t)))
     (if (and grep-o-matic-use-git-grep
 	     (string-equal "git"
 			   (downcase (symbol-name (vc-backend

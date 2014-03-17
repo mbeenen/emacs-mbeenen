@@ -5,7 +5,7 @@
 
 ;; My custom keybindings
 (define-key mbeenen-custom-map (kbd "c") 'compile)
-(define-key mbeenen-custom-map (kbd "g") 'grep)
+(define-key mbeenen-custom-map (kbd "g") 'grep-o-matic-current-directory)
 (define-key mbeenen-custom-map (kbd "r") 'recompile)
 (define-key mbeenen-custom-map (kbd "s") 'shell)
 (define-key mbeenen-custom-map (kbd "i") 'ido-goto-symbol)
@@ -17,7 +17,7 @@
 (define-key mbeenen-custom-map (kbd "f") 'ifind-mode-current-directory)
 (define-key mbeenen-custom-map (kbd "/") 'comment-or-uncomment-region)
 (define-key mbeenen-custom-map (kbd "p") 'grep-o-matic-repository)
-(define-key mbeenen-custom-map (kbd "C-p") 'grep-o-matic-current-directory)
+(define-key mbeenen-custom-map (kbd "C-p") 'grep-o-matic-parent-repository)
 (define-key mbeenen-custom-map (kbd "t") 'ido-find-tag)
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "SPC") 'just-one-space)
