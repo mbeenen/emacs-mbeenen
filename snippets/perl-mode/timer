@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : timer
+#key : timer
+# --
+my @time = Time::HiRes::gettimeofday();
+printf "${1:description} took %.2f microseconds....\n<br/>", Time::HiRes::tv_interval(\@time) * 1000000;
