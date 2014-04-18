@@ -4,5 +4,8 @@
 # --
 use strict;
 use warnings;
-use Test::More;
+use Test::More "no_plan";
+
+use Amazon::Test::RetailWebsite::Init;
+use PI::P13N::Test::MockUtils qw(createMockObject mockModule);
 $0
