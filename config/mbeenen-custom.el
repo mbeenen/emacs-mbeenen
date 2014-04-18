@@ -9,7 +9,7 @@
  '(mmm-major-mode-preferences (quote ((perl perl-mode) (python python-mode python-mode) (javascript javascript-mode c++-mode) (java jde-mode java-mode c++-mode) (css css-mode c++-mode))))
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
- '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl %s %s")
+ '(projectile-tags-command "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl %s")
  '(repository-root-exhaustive-scan t)
  '(repository-root-force-scan nil)
  '(yas/triggers-in-field t))
@@ -18,7 +18,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-annotation-face ((t (:foreground "#8cd0d3"))) t)
+ '(c-annotation-face ((t (:foreground "#8cd0d3"))))
  '(cperl-array-face ((t (:foreground "#f0dfaf" :weight bold))))
  '(cperl-hash-face ((t (:foreground "#f0dfaf" :slant italic :weight bold))))
  '(mmm-default-submode-face ((t (:background "#4f4f4f"))))
