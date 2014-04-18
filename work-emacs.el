@@ -12,6 +12,7 @@
 (require 'mbeenen-work-java)
 (require 'mbeenen-work-logs)
 (require 'mbeenen-work-org)
+(require 'mbeenen-work-perl)
 (require 'mbeenen-work-keybindings)
 
 ;; Load desktop last
