@@ -8,6 +8,8 @@
 ;; everything else
 (require 'mbeenen-home-org)
 (require 'mbeenen-home-startup)
+(require 'pbcopy)
+(require 'mbeenen-emacs-mac)
 
 ;; Desktop loading goes last
 (require 'mbeenen-desktop)
