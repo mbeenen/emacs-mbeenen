@@ -92,8 +92,8 @@
 (add-hook 'java-mode-hook 'mbeenen-prog-mode-hook)
 
 ;; Looking up javadoc
-(require 'javadoc-help)
-(javadoc-set-predefined-urls "http://docs.oracle.com/javase/6/docs/api")
+;; (require 'javadoc-help)
+;; (javadoc-set-predefined-urls "http://docs.oracle.com/javase/6/docs/api")
 
 
 ;; UTILITY FUNCTIONS - shortcuts for operations I find myself frequently performing

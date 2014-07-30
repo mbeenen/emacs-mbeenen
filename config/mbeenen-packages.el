@@ -23,7 +23,6 @@
     expand-region
     grep-a-lot
     ido-ubiquitous
-    javadoc-help
     js-comint
     js2-mode
     magit
