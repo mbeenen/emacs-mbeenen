@@ -103,4 +103,7 @@
 ;; don't let the cursor go into minibuffer prompt
 (setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
+;; For the sanity...
+(setq ring-bell-function 'ignore)
+
 (provide 'mbeenen-defaults)
