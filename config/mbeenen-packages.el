@@ -9,6 +9,7 @@
 (defvar mbeenen-packages
   '(
     ace-jump-mode
+    ag
     auto-complete
     color-moccur
     color-theme
@@ -29,6 +30,7 @@
     mark-multiple
     paredit
     projectile
+    rcirc-notify
     repository-root
     rvm
     s

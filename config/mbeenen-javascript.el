@@ -3,7 +3,11 @@
 
 (add-hook 'js2-mode-hook 'mbeenen-prog-mode-hook)
 (add-hook 'js-mode-hook 'mbeenen-prog-mode-hook)
-
+;; (add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode -1)))
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+;;              (add-hook 'electric-indent-functions
+;;                             (lambda () 'no-indent) nil 'local)))
 (require 'js-comint)
 
 (setq inferior-js-program-command "nodejs")

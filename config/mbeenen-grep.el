@@ -1,3 +1,4 @@
+(require 'ag)
 (require 'repository-root)
 (setq repository-root-matchers (quote (repository-root-matcher/git)))
 (require 'grep-o-matic)
