@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : log
+#key : log
+# --
+FLLog::FLLogError('MBEENEN: ${1:message}');

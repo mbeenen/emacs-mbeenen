@@ -2,4 +2,4 @@
 #name : dbg
 #key : dbg
 # --
-print STDERR "\n${1:message}\n";
+Test::More::diag("${1:message}");

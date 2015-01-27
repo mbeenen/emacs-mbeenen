@@ -2,4 +2,4 @@
 #name : dump
 #key : dump
 # --
-print STDERR "\n".'${1:variableName} is: '.Data::Dumper::Dumper($1)."\n";
+Test::More::diag('${1:variableName} is: ',Test::More::explain($1));

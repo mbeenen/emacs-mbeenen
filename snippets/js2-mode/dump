@@ -1,0 +1,5 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: dump
+# key: dump
+# --
+console.log('${1:variable} is ' + JSON.stringify($1));
