@@ -1,13 +1,15 @@
-(setq js2-basic-offset 4)
+
+(setq js2-basic-offset 2)
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-hook 'js2-mode-hook 'mbeenen-prog-mode-hook)
 (add-hook 'js-mode-hook 'mbeenen-prog-mode-hook)
-;; (add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode -1)))
-;; (add-hook 'js2-mode-hook
-;;           (lambda ()
-;;              (add-hook 'electric-indent-functions
-;;                             (lambda () 'no-indent) nil 'local)))
+(add-hook 'js2-mode-hook (lambda () (electric-indent-local-mode -1)))
+(add-hook 'js2-mode-hook
+          (lambda ()
+             (add-hook 'electric-indent-functions
+                            (lambda () 'no-indent) nil 'local)))
+
 (require 'js-comint)
 
 (setq inferior-js-program-command "nodejs")
@@ -29,5 +31,8 @@
 			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
 			    ;; (local-set-key "\C-cl" 'js-load-file-and-go)
 			    ))
+
+(require 'handlebars-mode)
+(define-key handlebars-mode-map (kbd "C-c e") 'sgml-close-tag)
 
 (provide 'mbeenen-javascript)
