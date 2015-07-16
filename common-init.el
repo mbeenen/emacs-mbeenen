@@ -56,7 +56,7 @@
 
 ;; Load any site-lisp that doesn't require much config
 (require 'ace-jump-mode)
-(require 'css-complete)
+;; (require 'css-complete)
 (require 'expand-region)
 (require 'inline-string-rectangle)
 (require 'mark-more-like-this)
