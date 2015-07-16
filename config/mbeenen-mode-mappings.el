@@ -4,4 +4,6 @@
 ;; org mode
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
+(add-to-list 'auto-mode-alist '("\\.adp$" . css-mode))
+
 (provide 'mbeenen-mode-mappings)
