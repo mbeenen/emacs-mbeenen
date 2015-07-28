@@ -1,5 +1,4 @@
 ;; Modifications to Emacs defaults setup
-(set-default-font "-unknown-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
 
 ;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
