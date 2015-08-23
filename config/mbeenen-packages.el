@@ -1,6 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
@@ -15,6 +15,7 @@
     color-theme
     ctags
     dash
+    default-text-scale
     dired-details
     dired-details+
     dired-single
@@ -22,6 +23,7 @@
     etags-table
     expand-region
     grep-a-lot
+    handlebars-mode
     ido-ubiquitous
     js-comint
     js2-mode
@@ -30,7 +32,7 @@
     paredit
     projectile
     rcirc-notify
-    repository-root
+    ; repository-root
     rvm
     s
     scss-mode

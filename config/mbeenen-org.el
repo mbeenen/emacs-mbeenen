@@ -1,4 +1,14 @@
 (require 'org)
+
+;; directory where org files live
+(defvar org-dir "~/emacs/org-mbeenen")
+
+;; Org settings
+(setq org-agenda-files (list (concat org-dir "/agenda.org")
+                               (concat org-dir "/refile.org")))
+(setq org-default-notes-file (concat org-dir "/refile.org"))
+
+
 ;; General settings for any org file
 (add-hook 'org-mode-hook
           (lambda ()

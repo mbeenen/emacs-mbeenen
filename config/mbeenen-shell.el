@@ -11,8 +11,6 @@
                                                   (current-buffer)))))))))
               nil t))
 
-  (add-hook 'shell-mode-hook 'track-shell-directory/procfs)
-
 (defun add-mode-line-dirtrack ()
   (add-to-list 'mode-line-buffer-identification
                '(:propertize (" " default-directory " ") face dired-directory)))
@@ -46,5 +44,24 @@
 
 ;; shell shortcuts
 (define-key shell-mode-map (kbd "C-c e") 'shell-clear)
+
+;; Allow putting common shell directories into a stored list
+(defvar saved-shells (make-hash-table))
+
+(defun mbeenen-visit-shell ()
+  (interactive)
+  (let (ido-list)
+    (maphash (lambda (key value)
+               (push key ido-list)) saved-shells)
+    (let (chosen-key)
+      (setq chosen-key (ido-completing-read "shell: " ido-list))
+      (visit-or-create-shell chosen-key)
+      )))
+
+(defun visit-or-create-shell (buffer-name)
+  (if (not (get-buffer buffer-name))
+      (progn
+        (init-shell (gethash buffer-name saved-shells) buffer-name))
+    (switch-to-buffer buffer-name)))
 
 (provide 'mbeenen-shell)

@@ -1,13 +1,4 @@
 (require 'magit)
-;; Magit customizations
-(set-face-attribute 'magit-diff-add nil
-                    :foreground "#8CD0D3")
-(set-face-attribute 'magit-diff-del nil
-                    :foreground "#CC9393")
-(set-face-attribute 'magit-item-highlight nil
-                    :background "#4F4F4F")
-(set-face-attribute 'magit-log-graph nil
-                    :foreground "light green")
 
 (defvar magit-status-fullscreen-window-configuration-register
   ?b
@@ -35,7 +26,7 @@ variable. The fullscreen magit status configuration is stored
 in register specified by the magit-status-register variable."
   (interactive)
   (window-configuration-to-register magit-status-fullscreen-window-configuration-register)
-  (magit-status (magit-get-top-dir default-directory))
+  (magit-status)
   (delete-other-windows)
   (window-configuration-to-register magit-status-fullscreen-register))
 

@@ -27,65 +27,14 @@
     (find-tag (ido-completing-read "Tag: " tag-names))))
 
 (defun ido-find-file-in-tag-files ()
-  "Uses the current tags table to construct a list of files in the project, and use ido-completing-read
-to present the choices. Handles duplicate file names by appending the name of the first different directory
-name for the two files, moving up the directory tree step by step."
-  (interactive)
-  (tags-reset-tags-tables)
-  (tags-completion-table)
-  (save-excursion
-    (let ((enable-recursive-minibuffers t))
-      (visit-tags-table-buffer))
-    (setq tbl (make-hash-table :test 'equal))
-    (let (ido-list)
-      (mapc (lambda (path)
-              ;; format path for display in ido list, by default displaying the parent directory of the file
-              (setq key (replace-regexp-in-string "\\(.*?\\)\\([^/]+\\)/\\([^/]+?\\)$" "\\3" path))
-              ;; remove trailing | or /
-              (setq key (replace-regexp-in-string "\\(|\\|/\\)$" "" key))
-
-              (if (gethash key tbl)
-                  ;; Key already exists in the table, we need to uniquify them
-                  (let* ((old-path (gethash key tbl))
-                         (old-path-tmp (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\1" old-path))
-                         (new-path-tmp (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\1" path))
-                         unique-name-old
-                         unique-name-new)
-                    (setq unique-name-old
-                          (replace-regexp-in-string "\\(.*?\\)\\([^/]+\\)/\\([^/]+?\\)$" "\\3:" path)
-                          unique-name-new
-                          (replace-regexp-in-string "\\(.*?\\)\\([^/]+\\)/\\([^/]+?\\)$" "\\3:" path))
-                    ;; Keep adding directories to the keys until they differentiate
-                    (while (string-equal unique-name-old unique-name-new)
-                      (setq unique-name-old
-                            (concat
-                             (car (split-string unique-name-old ":"))
-                             ":"
-                             (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\2" old-path-tmp)
-                             )
-                            old-path-tmp
-                            (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\1" old-path-tmp)
-                            unique-name-new
-                            (concat
-                             (car (split-string unique-name-new ":"))
-                             ":"
-                             (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\2" new-path-tmp)
-                             )
-                            new-path-tmp
-                            (replace-regexp-in-string "\\(.*?\\)/\\([^/]+?\\)$" "\\1" new-path-tmp)))
-                    (remhash key tbl)
-                    (puthash unique-name-old old-path tbl)
-                    (puthash unique-name-new path tbl)
-                    (setq ido-list (delete key ido-list))
-                    (push unique-name-old ido-list)
-                    (push unique-name-new ido-list))
-                ;; Key does not exist in the table, free to push it in
-                (puthash key path tbl)
-                (push key ido-list))
-              )
-            (tags-table-files)
-            )
-      (find-file (gethash (ido-completing-read "project-files: " ido-list) tbl)))))
+      (interactive)
+      (save-excursion
+        (let ((enable-recursive-minibuffers t))
+          (visit-tags-table-buffer))
+        (find-file
+         (expand-file-name
+          (ido-completing-read
+           "Project file: " (tags-table-files) nil t)))))
 
 ;; get rid of `find-file-read-only' and replace it with something
 ;; more useful.
@@ -103,8 +52,6 @@ name for the two files, moving up the directory tree step by step."
   (if (find-file (ido-completing-read "Find recent file: " recentf-list))
       (message "Opening file...")
     (message "Aborting")))
-
-(global-set-key (kbd "C-.") 'ido-find-file-in-tag-files)
 
 (defvar ido-enable-replace-completing-read t
   "If t, use ido-completing-read instead of completing-read if possible.

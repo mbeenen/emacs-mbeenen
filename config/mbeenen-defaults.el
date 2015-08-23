@@ -85,6 +85,11 @@
 (setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
 (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
+(require 'default-text-scale)
+(setq default-text-scale-amount 10)
+(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
+(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
+
 (require 'tramp)
 ;; keep in mind known issues with zsh - see emacs wiki
 (setq tramp-default-method "ssh")
@@ -99,6 +104,10 @@
 (icomplete-mode +1)
 
 (winner-mode t)
+
+;; Always split windows along the y-axis
+(setq split-height-threshold nil)
+(setq split-width-threshold 120)
 
 ;; don't let the cursor go into minibuffer prompt
 (setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))

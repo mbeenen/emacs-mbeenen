@@ -24,6 +24,9 @@
 ;; Set some basic defaults
 (require 'mbeenen-defaults)
 
+;; System specific settings
+(require 'mbeenen-emacs-mac)
+
 ;; Load the main modules
 (require 'mbeenen-packages)
 (require 'mbeenen-auto-complete)

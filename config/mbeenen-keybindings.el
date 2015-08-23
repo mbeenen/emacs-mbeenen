@@ -22,10 +22,12 @@
 (define-key mbeenen-custom-map (kbd "d") 'find-name-dired)
 (define-key mbeenen-custom-map (kbd "SPC") 'just-one-space)
 (define-key mbeenen-custom-map (kbd "y") 'yas-insert-snippet)
+(define-key mbeenen-custom-map (kbd "h") 'mbeenen-visit-shell)
 
 ;; file finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 (global-set-key (kbd "C-x F") 'djcb-find-file-as-root)
+(global-set-key (kbd "C-.") 'projectile-find-file)
 
 ;; move more quickly
 (global-set-key (kbd "C-e") 'move-end-of-line-or-next-line)
@@ -126,7 +128,7 @@
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
 ;; yasnippet
-(global-set-key (kbd "<C-tab>") 'yas/expand)
+(global-set-key (kbd "C-,") 'yas/expand)
 
 (provide 'mbeenen-keybindings)
 
