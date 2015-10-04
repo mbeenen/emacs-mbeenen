@@ -34,4 +34,10 @@
 ;; cursor settings
 (set-cursor-color "grey60")
 
+;; Allow text to be scaled easily
+(require 'default-text-scale)
+(setq default-text-scale-amount 10)
+(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
+(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
+
 (provide 'mbeenen-ui)
