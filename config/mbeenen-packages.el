@@ -13,6 +13,7 @@
     auto-complete
     color-moccur
     color-theme
+    cider
     ctags
     dash
     default-text-scale
