@@ -10,6 +10,12 @@ entering fullscreen magit-status.")
   "The register to store the fullscreen magit-status
 window configuration in.")
 
+;; Don't say anything about reverting buffers (the 'usage option was causing errors on 10/05/15)
+(setq magit-revert-buffers 'silent)
+
+;; I know what I'm doing when I push
+(setq magit-push-always-verify nil)
+
 (defun magit-kill-file-on-line ()
   "Show file on current magit line and prompt for deletion."
   (interactive)
