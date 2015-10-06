@@ -4,5 +4,8 @@
   (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
   )
 
+;; Set path information relevant to my mac installation
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 (provide 'mbeenen-emacs-mac)
 
