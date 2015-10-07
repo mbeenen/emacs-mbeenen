@@ -14,6 +14,7 @@
     color-moccur
     color-theme
     cider
+    company
     ctags
     dash
     default-text-scale
