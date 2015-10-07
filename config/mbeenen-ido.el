@@ -7,6 +7,7 @@
 (setq ido-everywhere t)
 (setq ido-max-directory-size 100000)
 (ido-mode 1)
+(ido-ubiquitous-mode)
 
 ;; Ido minibuffer keybindings
 (defun mbeenen-ido-minibuffer-setup ()
