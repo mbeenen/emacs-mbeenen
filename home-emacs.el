@@ -12,6 +12,7 @@
 ;; Any home specific initialization code to run after loading
 ;; everything else
 (require 'mbeenen-home-init)
+(require 'mbeenen-clojure)
 (require 'pbcopy)
 
 ;; Desktop loading goes last
