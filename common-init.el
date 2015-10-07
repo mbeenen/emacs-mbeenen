@@ -24,11 +24,13 @@
 ;; Set some basic defaults
 (require 'mbeenen-defaults)
 
+;; Load in all the packages we require
+(require 'mbeenen-packages)
+
 ;; System specific settings
 (require 'mbeenen-emacs-mac)
 
 ;; Load the main modules
-(require 'mbeenen-packages)
 (require 'mbeenen-auto-complete)
 (require 'mbeenen-color-theme)
 (require 'mbeenen-css)
