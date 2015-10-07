@@ -22,6 +22,7 @@
     dired-single
     etags-select
     etags-table
+    exec-path-from-shell
     expand-region
     grep-a-lot
     handlebars-mode
