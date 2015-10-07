@@ -26,9 +26,6 @@
    "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl -f %s %s")
  '(repository-root-exhaustive-scan t)
  '(repository-root-force-scan nil)
- '(tls-program
-   (quote
-    ("/apollo/env/envImprovement/bin/openssl s_client -connect %h:%p -no_ssl2 -ign_eof")))
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
