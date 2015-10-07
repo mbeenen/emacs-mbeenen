@@ -102,10 +102,10 @@
 
 ;; Always split windows along the y-axis
 (setq split-height-threshold nil)
-(setq split-width-threshold 120)
+(setq split-width-threshold 180)
 
 ;; don't let the cursor go into minibuffer prompt
-(setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
+(setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))                                                            
 
 ;; For the sanity...
 (setq ring-bell-function 'ignore)
