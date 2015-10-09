@@ -110,4 +110,7 @@
 ;; For the sanity...
 (setq ring-bell-function 'ignore)
 
+;; Sorting
+(setq sort-fold-case t)
+
 (provide 'mbeenen-defaults)
