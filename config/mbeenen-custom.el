@@ -17,9 +17,10 @@
      (javascript javascript-mode c++-mode)
      (java jde-mode java-mode c++-mode)
      (css css-mode c++-mode))))
+ '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
-    (repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode)))
+    (markdown-mode repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode)))
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
  '(projectile-tags-command
