@@ -16,7 +16,8 @@
             ;; Undefine C-c [ and C-c ] since this breaks my org-agenda files when directories are include
             ;; It expands the files in the directories individually
             (org-defkey org-mode-map "\C-c["    'undefined)
-            (org-defkey org-mode-map "\C-c]"    'undefined)))
+            (org-defkey org-mode-map "\C-c]"    'undefined)
+            (flyspell-mode)))
 
 (setq org-log-done t)
 (setq org-agenda-include-all-todo t)

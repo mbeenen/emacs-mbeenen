@@ -130,6 +130,9 @@
 ;; yasnippet
 (global-set-key (kbd "C-,") 'yas/expand)
 
+;; spell correct
+(global-set-key (kbd "C-x C-i") 'endless/ispell-word-then-abbrev)
+
 (provide 'mbeenen-keybindings)
 
 
