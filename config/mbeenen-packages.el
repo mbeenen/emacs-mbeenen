@@ -10,6 +10,7 @@
   '(
     ace-jump-mode
     ag
+    aggressive-indent
     auto-complete
     color-moccur
     color-theme
