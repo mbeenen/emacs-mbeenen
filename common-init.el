@@ -44,7 +44,6 @@
 (require 'mbeenen-keyboard-macros)
 (require 'mbeenen-magit)
 (require 'mbeenen-midnight)
-(require 'mbeenen-mmm)
 (require 'mbeenen-programming)
 (require 'mbeenen-projectile)
 (require 'mbeenen-ruby)
@@ -72,7 +71,6 @@
 ;; Configuration for various programming (or other major) modes
 (require 'mbeenen-java)
 (require 'mbeenen-javascript)
-(require 'mbeenen-mason)
 (require 'mbeenen-org)
 (require 'mbeenen-perl)
 

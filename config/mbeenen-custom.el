@@ -10,13 +10,6 @@
  '(js2-include-node-externs t)
  '(js2-strict-inconsistent-return-warning nil)
  '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
- '(mmm-major-mode-preferences
-   (quote
-    ((perl perl-mode)
-     (python python-mode python-mode)
-     (javascript javascript-mode c++-mode)
-     (java jde-mode java-mode c++-mode)
-     (css css-mode c++-mode))))
  '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
@@ -36,7 +29,6 @@
  '(c-annotation-face ((t (:foreground "#8cd0d3"))))
  '(cperl-array-face ((t (:foreground "#f0dfaf" :weight bold))))
  '(cperl-hash-face ((t (:foreground "#f0dfaf" :slant italic :weight bold))))
- '(mmm-default-submode-face ((t (:background "#4f4f4f"))))
  '(mumamo-background-chunk-major ((t (:background "#3f3f3f"))) t)
  '(mumamo-background-chunk-submode1 ((t (:background "#4f4f4f"))) t))
 

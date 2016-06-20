@@ -4,9 +4,6 @@
 [submodule "site-lisp/ajc-java-complete"]
 	path = site-lisp/ajc-java-complete
 	url = git://github.com/jixiuf/ajc-java-complete.git
-[submodule "site-lisp/mmm-mode"]
-	path = site-lisp/mmm-mode
-	url = git@github.com:mbeenen/mmm-mode.git
 [submodule "site-lisp/emacs-repository-root"]
 	path = site-lisp/emacs-repository-root
 	url = git@github.com:ZungBang/emacs-repository-root.git
