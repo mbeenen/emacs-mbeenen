@@ -113,4 +113,7 @@
 ;; Sorting
 (setq sort-fold-case t)
 
+;; Font size adjustment
+(set-frame-font "-*-Menlo-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
+
 (provide 'mbeenen-defaults)
