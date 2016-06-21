@@ -4,12 +4,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(enable-local-variables :all)
- '(js2-basic-offset 2)
+ '(js2-basic-offset 2 t)
  '(js2-bounce-indent-p nil)
  '(js2-include-node-externs t)
  '(js2-strict-inconsistent-return-warning nil)
  '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
+ '(menu-bar-mode nil)
  '(nxml-child-indent 4)
  '(package-selected-packages
    (quote
@@ -20,6 +23,9 @@
    "ctags -Re --langmap=HTML:.m.mi..dhandler..autohandler,Perl:.t.pm.pl -f %s %s")
  '(repository-root-exhaustive-scan t)
  '(repository-root-force-scan nil)
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(tool-bar-mode nil)
  '(yas/triggers-in-field t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
