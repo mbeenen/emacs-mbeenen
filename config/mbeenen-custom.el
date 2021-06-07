@@ -11,12 +11,11 @@
  '(js2-bounce-indent-p nil)
  '(js2-include-node-externs t)
  '(js2-strict-inconsistent-return-warning nil)
- '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
+ '(magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
  '(menu-bar-mode nil)
  '(nxml-child-indent 4)
  '(package-selected-packages
-   (quote
-    (markdown-mode repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode)))
+   '(handlebars-mode exec-path-from-shell default-text-scale cider aggressive-indent flycheck tide company markdown-mode repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode))
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
  '(projectile-tags-command

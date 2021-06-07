@@ -14,6 +14,3 @@
 (require 'mbeenen-home-init)
 (require 'mbeenen-clojure)
 (require 'pbcopy)
-
-;; Desktop loading goes last
-(require 'mbeenen-desktop)

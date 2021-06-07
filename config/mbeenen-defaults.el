@@ -55,9 +55,9 @@
 (setq-default transient-mark-mode t)
 
 ;; smart indenting and pairing for all
-(electric-pair-mode nil)
-(electric-indent-mode t)
-(electric-layout-mode t)
+(electric-pair-mode)
+(electric-indent-mode)
+;; (electric-layout-mode nil)
 
 ;; Remove text in active region if inserting text
 (delete-selection-mode 1)

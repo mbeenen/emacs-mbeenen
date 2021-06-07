@@ -1,9 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (defvar mbeenen-packages
@@ -27,7 +24,6 @@
     exec-path-from-shell
     expand-region
     grep-a-lot
-    handlebars-mode
     ido-ubiquitous
     js-comint
     js2-mode

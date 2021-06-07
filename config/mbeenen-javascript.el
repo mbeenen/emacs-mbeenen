@@ -1,5 +1,7 @@
 
+(setq js-indent-level 2)
 (setq js2-basic-offset 2)
+(setq js-jsx-indent-level 2)
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-hook 'js2-mode-hook 'mbeenen-prog-mode-hook)
@@ -31,8 +33,5 @@
 			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
 			    ;; (local-set-key "\C-cl" 'js-load-file-and-go)
 			    ))
-
-(require 'handlebars-mode)
-(define-key handlebars-mode-map (kbd "C-c e") 'sgml-close-tag)
 
 (provide 'mbeenen-javascript)
