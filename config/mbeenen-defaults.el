@@ -78,6 +78,8 @@
 ;; Keep cursor away from edges when scrolling up/down
 (require 'smooth-scrolling)
 
+(require 'repository-root)
+
 ;; Add parts of each file's directory to the buffer name if not unique
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)

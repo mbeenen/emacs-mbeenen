@@ -7,7 +7,7 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(enable-local-variables :all)
- '(js2-basic-offset 2 t)
+ '(js2-basic-offset 2)
  '(js2-bounce-indent-p nil)
  '(js2-include-node-externs t)
  '(js2-strict-inconsistent-return-warning nil)
@@ -15,7 +15,7 @@
  '(menu-bar-mode nil)
  '(nxml-child-indent 4)
  '(package-selected-packages
-   '(handlebars-mode exec-path-from-shell default-text-scale cider aggressive-indent flycheck tide company markdown-mode repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode))
+   '(ido-completing-read+ handlebars-mode exec-path-from-shell default-text-scale cider aggressive-indent flycheck tide company markdown-mode repository-root rcirc-notify projectile paredit mark-multiple magit js2-mode js-comint ido-ubiquitous grep-a-lot expand-region etags-table etags-select dired-single dired-details+ dired-details ctags color-theme color-moccur auto-complete ag ace-jump-mode))
  '(perl-indent-continued-arguments 4)
  '(perl-indent-parens-as-block t)
  '(projectile-tags-command

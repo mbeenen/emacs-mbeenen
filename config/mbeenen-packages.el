@@ -1,6 +1,5 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (defvar mbeenen-packages
@@ -13,18 +12,18 @@
     color-theme
     cider
     company
-    ctags
+;;    ctags
     dash
     default-text-scale
-    dired-details
-    dired-details+
+;;    dired-details
+;;    dired-details+
     dired-single
-    etags-select
-    etags-table
+;;    etags-select
+;;    etags-table
     exec-path-from-shell
     expand-region
     grep-a-lot
-    ido-ubiquitous
+    ido-completing-read+
     js-comint
     js2-mode
     magit
@@ -32,7 +31,7 @@
     paredit
     projectile
     rcirc-notify
-    repository-root
+;;    repository-root
     rvm
     s
     scss-mode

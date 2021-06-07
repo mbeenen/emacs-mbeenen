@@ -49,7 +49,7 @@
 (require 'mbeenen-ruby)
 (require 'mbeenen-shell)
 (require 'mbeenen-spell)
-(require 'mbeenen-tags)
+;; (require 'mbeenen-tags)
 (require 'mbeenen-ui)
 (require 'mbeenen-yasnippet)
 
