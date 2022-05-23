@@ -6,7 +6,7 @@
 ;; Org settings
 (setq org-agenda-files (list (concat org-dir "/agenda.org")
                                (concat org-dir "/refile.org")))
-(setq org-default-notes-file (concat org-dir "/refile.org"))
+(setq org-default-notes-file (concat org-dir "/agenda.org"))
 (setq org-refile-targets (concat org-dir "/agenda.org"))
 (setq org-refile-target-files (list (concat org-dir "/agenda.org")))
 

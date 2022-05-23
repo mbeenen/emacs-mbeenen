@@ -61,6 +61,7 @@ magit buffer"
   (magit-refresh))
 
 (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
+(define-key magit-status-mode-map (kbd "C-n") 'next-line)
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
